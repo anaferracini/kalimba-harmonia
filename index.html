@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Aprenda kalimba, descubra melodias e desenvolva sua própria música no Kalimba Harmonia.">
   <title>Kalimba Harmonia — Sua música começa aqui</title>
+
   <style>
     :root {
       --cream: #f5f0e3;
@@ -46,7 +47,7 @@
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 15px;
     }
 
     nav a {
@@ -55,7 +56,10 @@
       font-size: 14px;
     }
 
-    nav a:hover { color: var(--green); }
+    nav a:hover {
+      color: var(--green);
+      text-decoration: underline;
+    }
 
     .hero {
       padding: 85px 7%;
@@ -101,6 +105,10 @@
       font-weight: bold;
     }
 
+    button:hover, .button:hover {
+      background: var(--dark);
+    }
+
     main { padding: 55px 7%; }
 
     .section-title {
@@ -122,9 +130,7 @@
       border: 1px solid #e5d8c2;
     }
 
-    .card .symbol {
-      font-size: 30px;
-    }
+    .card .symbol { font-size: 30px; }
 
     .card h3 { color: var(--green); }
 
@@ -133,6 +139,8 @@
       font-weight: bold;
       text-decoration: none;
     }
+
+    .card a:hover { text-decoration: underline; }
 
     .welcome {
       margin-top: 55px;
@@ -149,7 +157,10 @@
       text-align: center;
     }
 
-    footer a { color: #e9d5ad; }
+    footer a {
+      color: #e9d5ad;
+      margin: 0 8px;
+    }
 
     @media (max-width: 600px) {
       header { justify-content: center; }
@@ -163,25 +174,34 @@
 <body>
   <header>
     <div class="logo">♫ Kalimba Harmonia</div>
+
     <nav aria-label="Menu principal">
       <a href="index.html">Início</a>
-      <a href="#curso">Curso</a>
-      <a href="#biblioteca">Cifras</a>
-      <a href="#mundo">Músicas do mundo</a>
-      <a href="#composicao">Composição</a>
-      <a href="#sobre">Sobre</a>
+      <a href="curso.html">Curso</a>
+      <a href="biblioteca.html">Cifras</a>
+      <a href="gospel.html">Música cristã</a>
+      <a href="hinarios.html">Hinários</a>
+      <a href="mundo.html">Músicas do mundo</a>
+      <a href="composicao.html">Composição</a>
+      <a href="sobre.html">Sobre</a>
     </nav>
   </header>
 
   <section class="hero">
     <h1>Sua música começa aqui.</h1>
+
     <p>
       Aprenda a tocar kalimba, descubra melodias de diferentes
       culturas e desenvolva sua própria música, uma nota de cada vez.
     </p>
-    <form class="search" action="#conteudo">
-      <input type="search" name="q" placeholder="O que você quer aprender?"
-        aria-label="Pesquisar conteúdo">
+
+    <form class="search" action="biblioteca.html" method="get">
+      <input
+        type="search"
+        name="q"
+        placeholder="O que você quer aprender?"
+        aria-label="Pesquisar conteúdo"
+      >
       <button type="submit">Pesquisar</button>
     </form>
   </section>
@@ -190,39 +210,33 @@
     <h2 class="section-title">Explore o universo da kalimba</h2>
 
     <div class="cards">
-      <article class="card" id="curso">
+
+      <article class="card">
         <div class="symbol">🎓</div>
         <h3>Curso de kalimba</h3>
         <p>Aprenda desde os primeiros números até técnicas e arranjos.</p>
         <a href="curso.html">Conhecer o curso →</a>
       </article>
 
-      <article class="card" id="biblioteca">
+      <article class="card">
         <div class="symbol">🎼</div>
         <h3>Biblioteca de cifras</h3>
         <p>Encontre melodias e aprenda a interpretá-las na kalimba.</p>
         <a href="biblioteca.html">Explorar cifras →</a>
       </article>
 
-      <article class="card" id="mundo">
+      <article class="card">
         <div class="symbol">🌍</div>
         <h3>Músicas do mundo</h3>
         <p>Conheça tradições musicais e melodias de várias culturas.</p>
         <a href="mundo.html">Fazer descobertas →</a>
       </article>
 
-      <article class="card" id="gospel">
+      <article class="card">
         <div class="symbol">🎵</div>
         <h3>Música cristã</h3>
         <p>Explore louvores, hinários e repertório cristão.</p>
         <a href="gospel.html">Conhecer repertório →</a>
-      </article>
-
-      <article class="card" id="composicao">
-        <div class="symbol">✍️</div>
-        <h3>Composição e arranjos</h3>
-        <p>Desenvolva sua criatividade e crie suas próprias melodias.</p>
-        <a href="composicao.html">Começar a criar →</a>
       </article>
 
       <article class="card">
@@ -231,14 +245,23 @@
         <p>Consulte informações, edições e referências dos hinários.</p>
         <a href="hinarios.html">Explorar hinários →</a>
       </article>
+
+      <article class="card">
+        <div class="symbol">✍️</div>
+        <h3>Composição e arranjos</h3>
+        <p>Desenvolva sua criatividade e crie suas próprias melodias.</p>
+        <a href="composicao.html">Começar a criar →</a>
+      </article>
+
     </div>
 
-    <section class="welcome" id="sobre">
+    <section class="welcome">
       <h2>Uma nota de cada vez.</h2>
       <p>
         O Kalimba Harmonia é um espaço de aprendizagem,
         descoberta musical e criatividade para todos os níveis.
       </p>
+      <a class="button" href="sobre.html">Conheça o projeto</a>
     </section>
   </main>
 
@@ -246,7 +269,12 @@
     <p><strong>Kalimba Harmonia</strong></p>
     <p>Sua música começa aqui.</p>
     <p>© 2026 Kalimba Harmonia</p>
-    <p><a href="privacidade.html">Política de Privacidade</a></p>
+    <p>
+      <a href="sobre.html">Sobre</a>
+      |
+      <a href="privacidade.html">Política de Privacidade</a>
+    </p>
   </footer>
 </body>
 </html>
+```
