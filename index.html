@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprenda kalimba, descubra melodias e desenvolva sua própria música no Kalimba Harmonia.">
+  <title>Kalimba Harmonia — Sua música começa aqui</title>
+  <style>
+    :root {
+      --cream: #f5f0e3;
+      --wood: #d6b98c;
+      --green: #456b4a;
+      --dark: #344638;
+      --white: #fffdf8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--white);
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 1px solid var(--wood);
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: bold;
+      color: var(--green);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--green); }
+
+    .hero {
+      padding: 85px 7%;
+      text-align: center;
+      background: linear-gradient(135deg, #e8ddc7, #f5f0e3);
+    }
+
+    .hero h1 {
+      font: bold clamp(36px, 6vw, 58px) Georgia, serif;
+      margin: 0 0 18px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      font-size: 18px;
+    }
+
+    .search {
+      display: flex;
+      max-width: 540px;
+      margin: auto;
+      gap: 8px;
+    }
+
+    .search input {
+      flex: 1;
+      min-width: 0;
+      padding: 15px;
+      border: 1px solid var(--wood);
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button, .button {
+      background: var(--green);
+      color: white;
+      border: 0;
+      border-radius: 8px;
+      padding: 14px 20px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main { padding: 55px 7%; }
+
+    .section-title {
+      text-align: center;
+      font: bold 32px Georgia, serif;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #e5d8c2;
+    }
+
+    .card .symbol {
+      font-size: 30px;
+    }
+
+    .card h3 { color: var(--green); }
+
+    .card a {
+      color: var(--green);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .welcome {
+      margin-top: 55px;
+      background: #e5eadf;
+      padding: 35px;
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 30px 7%;
+      text-align: center;
+    }
+
+    footer a { color: #e9d5ad; }
+
+    @media (max-width: 600px) {
+      header { justify-content: center; }
+      nav { justify-content: center; }
+      .search { flex-direction: column; }
+      .hero { padding: 60px 6%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">♫ Kalimba Harmonia</div>
+    <nav aria-label="Menu principal">
+      <a href="index.html">Início</a>
+      <a href="#curso">Curso</a>
+      <a href="#biblioteca">Cifras</a>
+      <a href="#mundo">Músicas do mundo</a>
+      <a href="#composicao">Composição</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Sua música começa aqui.</h1>
+    <p>
+      Aprenda a tocar kalimba, descubra melodias de diferentes
+      culturas e desenvolva sua própria música, uma nota de cada vez.
+    </p>
+    <form class="search" action="#conteudo">
+      <input type="search" name="q" placeholder="O que você quer aprender?"
+        aria-label="Pesquisar conteúdo">
+      <button type="submit">Pesquisar</button>
+    </form>
+  </section>
+
+  <main id="conteudo">
+    <h2 class="section-title">Explore o universo da kalimba</h2>
+
+    <div class="cards">
+      <article class="card" id="curso">
+        <div class="symbol">🎓</div>
+        <h3>Curso de kalimba</h3>
+        <p>Aprenda desde os primeiros números até técnicas e arranjos.</p>
+        <a href="curso.html">Conhecer o curso →</a>
+      </article>
+
+      <article class="card" id="biblioteca">
+        <div class="symbol">🎼</div>
+        <h3>Biblioteca de cifras</h3>
+        <p>Encontre melodias e aprenda a interpretá-las na kalimba.</p>
+        <a href="biblioteca.html">Explorar cifras →</a>
+      </article>
+
+      <article class="card" id="mundo">
+        <div class="symbol">🌍</div>
+        <h3>Músicas do mundo</h3>
+        <p>Conheça tradições musicais e melodias de várias culturas.</p>
+        <a href="mundo.html">Fazer descobertas →</a>
+      </article>
+
+      <article class="card" id="gospel">
+        <div class="symbol">🎵</div>
+        <h3>Música cristã</h3>
+        <p>Explore louvores, hinários e repertório cristão.</p>
+        <a href="gospel.html">Conhecer repertório →</a>
+      </article>
+
+      <article class="card" id="composicao">
+        <div class="symbol">✍️</div>
+        <h3>Composição e arranjos</h3>
+        <p>Desenvolva sua criatividade e crie suas próprias melodias.</p>
+        <a href="composicao.html">Começar a criar →</a>
+      </article>
+
+      <article class="card">
+        <div class="symbol">📚</div>
+        <h3>Harpa Cristã e hinários</h3>
+        <p>Consulte informações, edições e referências dos hinários.</p>
+        <a href="hinarios.html">Explorar hinários →</a>
+      </article>
+    </div>
+
+    <section class="welcome" id="sobre">
+      <h2>Uma nota de cada vez.</h2>
+      <p>
+        O Kalimba Harmonia é um espaço de aprendizagem,
+        descoberta musical e criatividade para todos os níveis.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Kalimba Harmonia</strong></p>
+    <p>Sua música começa aqui.</p>
+    <p>© 2026 Kalimba Harmonia</p>
+    <p><a href="privacidade.html">Política de Privacidade</a></p>
+  </footer>
+</body>
+</html>
