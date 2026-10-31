@@ -1,161 +1,320 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Curso de kalimba para iniciantes e estudantes de todos os níveis.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curso gratuito de kalimba: aprenda a ler números, tocar melodias, compreender acordes e criar arranjos.">
+  <meta name="theme-color" content="#344638">
   <title>Curso de Kalimba | Kalimba Harmonia</title>
+
   <style>
+    :root {
+      --cream: #f5f0e3;
+      --wood: #d6b98c;
+      --green: #456b4a;
+      --dark: #344638;
+      --white: #fffdf8;
+      --border: #e5d8c2;
+    }
+
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      background: #f5f0e3;
-      color: #344638;
+      background: var(--cream);
+      color: var(--dark);
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 1.7;
     }
-    header, footer {
-      background: #344638;
-      color: white;
-      padding: 20px 7%;
+
+    header {
+      background: var(--white);
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 1px solid var(--wood);
     }
-    header a, footer a { color: #f5f0e3; text-decoration: none; }
-    main { max-width: 950px; margin: auto; padding: 35px 20px 60px; }
-    h1, h2 { font-family: Georgia, serif; }
-    h1 { font-size: 38px; }
+
+    .logo {
+      color: var(--green);
+      font: bold 25px Georgia, serif;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    nav a {
+      color: var(--dark);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--green);
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 35px 20px 60px;
+    }
+
     .intro {
-      background: #e6ddca;
-      padding: 28px;
-      border-radius: 12px;
-      margin-bottom: 28px;
+      background: linear-gradient(135deg, #e6ddca, var(--cream));
+      padding: 35px;
+      border-radius: 14px;
+      margin-bottom: 35px;
     }
-    .module {
-      background: #fffdf8;
-      border: 1px solid #e1d4bd;
-      border-radius: 12px;
-      padding: 22px;
-      margin: 16px 0;
+
+    h1, h2, h3 { font-family: Georgia, serif; }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 45px);
+      margin: 15px 0;
     }
-    .module h2 { color: #456b4a; }
-    .module li { margin: 8px 0; }
+
     .tag {
       display: inline-block;
       background: #e5eadf;
-      padding: 5px 10px;
+      padding: 5px 12px;
       border-radius: 20px;
       font-size: 13px;
     }
-    .back { display: inline-block; margin-bottom: 20px; }
+
+    .intro p { max-width: 750px; }
+
+    .module {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 18px 0;
+    }
+
+    .module h2 {
+      color: var(--green);
+      margin-top: 0;
+    }
+
+    .module li { margin: 9px 0; }
+
+    .module ol { padding-left: 25px; }
+
+    .module li::marker {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .study-tip {
+      background: #e5eadf;
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 35px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--green);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 30px 7%;
+      text-align: center;
+    }
+
+    footer a {
+      color: #e9d5ad;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 650px) {
+      header { justify-content: center; }
+      nav { justify-content: center; }
+      .intro { padding: 25px; }
+      .module { padding: 19px; }
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <a href="index.html"><strong>♫ Kalimba Harmonia</strong></a>
-  </header>
 
-  <main>
-    <a class="back" href="index.html">← Voltar ao início</a>
+<header>
+  <a class="logo" href="index.html">♫ Kalimba Harmonia</a>
 
-    <section class="intro">
-      <span class="tag">Curso completo · 50 aulas</span>
-      <h1>Aprenda a tocar kalimba</h1>
-      <p>
-        Um caminho progressivo para conhecer seu instrumento,
-        ler números, desenvolver técnica, compreender harmonia
-        e criar suas próprias melodias.
-      </p>
-      <p><strong>Instrumento de referência:</strong> kalimba de 17 teclas em Dó maior.</p>
-    </section>
+  <nav aria-label="Menu principal">
+    <a href="index.html">Início</a>
+    <a href="curso.html">Curso</a>
+    <a href="biblioteca.html">Cifras</a>
+    <a href="gospel.html">Música cristã</a>
+    <a href="hinarios.html">Hinários</a>
+    <a href="mundo.html">Músicas do mundo</a>
+    <a href="composicao.html">Composição</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
+</header>
 
-    <h2>Seu caminho de aprendizagem</h2>
+<main>
 
-    <section class="module">
-      <h2>Módulo 1 — Primeiros passos</h2>
-      <ol>
-        <li>Conhecendo a kalimba</li>
-        <li>Postura e posição das mãos</li>
-        <li>Como ler notas em números</li>
-        <li>Conhecendo as 17 teclas</li>
-        <li>A escala de Dó maior</li>
-        <li>Primeiros exercícios com os polegares</li>
-        <li>Lendo sequências numéricas</li>
-        <li>Conhecendo o ritmo</li>
-        <li>Sua primeira melodia</li>
-        <li>Revisão dos primeiros passos</li>
-      </ol>
-    </section>
+  <a class="back" href="index.html">← Voltar ao início</a>
 
-    <section class="module">
-      <h2>Módulo 2 — Ritmo e técnica</h2>
-      <ol start="11">
-        <li>Alternância dos polegares</li>
-        <li>Coordenação das mãos</li>
-        <li>Compassos e contagem</li>
-        <li>Pausas musicais</li>
-        <li>Andamento e metrônomo</li>
-        <li>Dinâmica: tocar suave e forte</li>
-        <li>Saltos entre notas</li>
-        <li>Praticando a memória musical</li>
-        <li>Como estudar melodias difíceis</li>
-        <li>Desafio de técnica</li>
-      </ol>
-    </section>
+  <section class="intro">
+    <span class="tag">Curso de 50 aulas</span>
 
-    <section class="module">
-      <h2>Módulo 3 — Harmonia e acompanhamento</h2>
-      <ol start="21">
-        <li>Melodia e acompanhamento</li>
-        <li>Conhecendo os intervalos</li>
-        <li>O que são acordes?</li>
-        <li>Acordes maiores e menores</li>
-        <li>Como ler símbolos de acordes</li>
-        <li>Primeiros acompanhamentos</li>
-        <li>Arpejos na kalimba</li>
-        <li>Padrões de acompanhamento</li>
-        <li>Inversões de acordes</li>
-        <li>Montando um arranjo simples</li>
-      </ol>
-    </section>
+    <h1>Aprenda a tocar kalimba</h1>
 
-    <section class="module">
-      <h2>Módulo 4 — Expressão e repertório</h2>
-      <ol start="31">
-        <li>Articulação musical</li>
-        <li>Ornamentos e pequenas variações</li>
-        <li>Recursos de expressão</li>
-        <li>Como interpretar uma melodia</li>
-        <li>Escolhendo o andamento</li>
-        <li>Acidentes musicais</li>
-        <li>Adaptando músicas às 17 teclas</li>
-        <li>Como escolher seu repertório</li>
-        <li>Afinação e conservação</li>
-        <li>Gravando e avaliando sua execução</li>
-      </ol>
-    </section>
+    <p>
+      Um caminho progressivo para conhecer seu instrumento,
+      ler números, desenvolver técnica, compreender harmonia
+      e criar suas próprias melodias.
+    </p>
 
-    <section class="module">
-      <h2>Módulo 5 — Criatividade e projeto final</h2>
-      <ol start="41">
-        <li>Organizando sua rotina de estudos</li>
-        <li>Memorização musical</li>
-        <li>Treinando o ouvido</li>
-        <li>Primeiros passos na improvisação</li>
-        <li>Criando uma melodia original</li>
-        <li>Escolhendo uma harmonia</li>
-        <li>Criando introduções e finais</li>
-        <li>Construindo um arranjo completo</li>
-        <li>Preparando uma apresentação</li>
-        <li>Projeto final: sua música na kalimba</li>
-      </ol>
-    </section>
+    <p>
+      <strong>Instrumento de referência:</strong>
+      kalimba de 17 teclas em Dó maior.
+    </p>
 
-    <p><a href="index.html">← Voltar à página inicial</a></p>
-  </main>
+    <p>
+      O curso está organizado em cinco módulos. Você pode
+      acompanhar a sequência no seu ritmo e praticar cada
+      conteúdo antes de avançar.
+    </p>
+  </section>
 
-  <footer>
-    <strong>Kalimba Harmonia</strong>
-    <p>Sua música começa aqui.</p>
-  </footer>
+  <h2>Seu caminho de aprendizagem</h2>
+
+  <section class="module" id="modulo1">
+    <h2>Módulo 1 — Primeiros passos</h2>
+    <p>Conheça o instrumento e aprenda a interpretar suas primeiras melodias.</p>
+    <ol>
+      <li>Conhecendo a kalimba</li>
+      <li>Postura e posição das mãos</li>
+      <li>Como ler notas em números</li>
+      <li>Conhecendo as 17 teclas</li>
+      <li>A escala de Dó maior</li>
+      <li>Primeiros exercícios com os polegares</li>
+      <li>Lendo sequências numéricas</li>
+      <li>Conhecendo o ritmo</li>
+      <li>Sua primeira melodia</li>
+      <li>Revisão dos primeiros passos</li>
+    </ol>
+  </section>
+
+  <section class="module" id="modulo2">
+    <h2>Módulo 2 — Ritmo e técnica</h2>
+    <p>Desenvolva coordenação, precisão e controle durante a execução.</p>
+    <ol start="11">
+      <li>Alternância dos polegares</li>
+      <li>Coordenação das mãos</li>
+      <li>Compassos e contagem</li>
+      <li>Pausas musicais</li>
+      <li>Andamento e metrônomo</li>
+      <li>Dinâmica: tocar suave e forte</li>
+      <li>Saltos entre notas</li>
+      <li>Praticando a memória musical</li>
+      <li>Como estudar melodias difíceis</li>
+      <li>Desafio de técnica</li>
+    </ol>
+  </section>
+
+  <section class="module" id="modulo3">
+    <h2>Módulo 3 — Harmonia e acompanhamento</h2>
+    <p>Entenda como as notas se relacionam e como acompanhar melodias.</p>
+    <ol start="21">
+      <li>Melodia e acompanhamento</li>
+      <li>Conhecendo os intervalos</li>
+      <li>O que são acordes?</li>
+      <li>Acordes maiores e menores</li>
+      <li>Como ler símbolos de acordes</li>
+      <li>Primeiros acompanhamentos</li>
+      <li>Arpejos na kalimba</li>
+      <li>Padrões de acompanhamento</li>
+      <li>Inversões de acordes</li>
+      <li>Montando um arranjo simples</li>
+    </ol>
+  </section>
+
+  <section class="module" id="modulo4">
+    <h2>Módulo 4 — Expressão e repertório</h2>
+    <p>Aprenda a interpretar músicas e explorar os recursos do instrumento.</p>
+    <ol start="31">
+      <li>Articulação musical</li>
+      <li>Ornamentos e pequenas variações</li>
+      <li>Recursos de expressão</li>
+      <li>Como interpretar uma melodia</li>
+      <li>Escolhendo o andamento</li>
+      <li>Acidentes musicais</li>
+      <li>Adaptando músicas às 17 teclas</li>
+      <li>Como escolher seu repertório</li>
+      <li>Afinação e conservação</li>
+      <li>Gravando e avaliando sua execução</li>
+    </ol>
+  </section>
+
+  <section class="module" id="modulo5">
+    <h2>Módulo 5 — Criatividade e projeto final</h2>
+    <p>Reúna o que aprendeu e desenvolva sua própria composição.</p>
+    <ol start="41">
+      <li>Organizando sua rotina de estudos</li>
+      <li>Memorização musical</li>
+      <li>Treinando o ouvido</li>
+      <li>Primeiros passos na improvisação</li>
+      <li>Criando uma melodia original</li>
+      <li>Escolhendo uma harmonia</li>
+      <li>Criando introduções e finais</li>
+      <li>Construindo um arranjo completo</li>
+      <li>Preparando uma apresentação</li>
+      <li>Projeto final: sua música na kalimba</li>
+    </ol>
+  </section>
+
+  <section class="study-tip">
+    <h2>Como aproveitar melhor o curso</h2>
+    <ul>
+      <li>Estude uma aula por vez.</li>
+      <li>Repita os exercícios até compreender o movimento.</li>
+      <li>Pratique devagar antes de aumentar a velocidade.</li>
+      <li>Escute atentamente cada nota.</li>
+      <li>Não avance apenas para terminar as aulas: procure compreender o conteúdo.</li>
+    </ul>
+
+    <p>
+      <strong>Próximo passo:</strong>
+      visite a biblioteca para encontrar exercícios e melodias
+      para praticar.
+    </p>
+
+    <a class="back" href="biblioteca.html">Ir para a biblioteca de cifras →</a>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Kalimba Harmonia</strong></p>
+  <p>Sua música começa aqui.</p>
+  <p>
+    <a href="index.html">Início</a> |
+    <a href="sobre.html">Sobre</a> |
+    <a href="privacidade.html">Privacidade</a>
+  </p>
+  <p>© 2026 Kalimba Harmonia</p>
+</footer>
+
 </body>
 </html>
+```
