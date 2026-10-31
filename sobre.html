@@ -4,13 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Conheça o Kalimba Harmonia, um espaço dedicado ao aprendizado, à descoberta e à criação musical por meio da kalimba.">
 <title>Sobre | Kalimba Harmonia</title>
 <style>
 :root {
-  --creme: #F5F0E3;
-  --madeira: #D6B98C;
-  --verde: #456B4A;
+  --creme: #f5f0e3;
+  --madeira: #d6b98c;
+  --verde: #456b4a;
   --escuro: #344638;
+  --branco: #fffdf8;
 }
 * { box-sizing: border-box; }
 body {
@@ -26,11 +28,18 @@ header {
   padding: 25px 7%;
 }
 header h1 { margin: 0; }
-nav { margin-top: 12px; }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 12px;
+}
 nav a {
   color: white;
   text-decoration: none;
-  margin-right: 16px;
+}
+nav a:hover, footer a:hover {
+  text-decoration: underline;
 }
 main {
   max-width: 900px;
@@ -44,7 +53,7 @@ main {
   margin-bottom: 25px;
 }
 section {
-  background: white;
+  background: var(--branco);
   padding: 25px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -57,19 +66,31 @@ footer {
   padding: 20px;
   margin-top: 40px;
 }
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+}
+@media (max-width: 600px) {
+  header { padding: 22px 5%; }
+  main { padding: 25px 15px; }
+  .hero, section { padding: 22px; }
+}
 </style>
 </head>
 <body>
 
 <header>
   <h1>Kalimba Harmonia</h1>
-  <nav>
+  <nav aria-label="Menu principal">
     <a href="index.html">Início</a>
     <a href="curso.html">Curso</a>
-    <a href="biblioteca.html">Biblioteca</a>
+    <a href="biblioteca.html">Cifras</a>
     <a href="gospel.html">Música cristã</a>
-    <a href="mundo.html">Músicas do mundo</a>
+    <a href="hinarios.html">Hinários</a>
+    <a href="mundo.html">Mundo</a>
     <a href="composicao.html">Composição</a>
+    <a href="sobre.html" aria-current="page">Sobre</a>
   </nav>
 </header>
 
@@ -138,6 +159,11 @@ footer {
 
 <footer>
   <p>Kalimba Harmonia — Música, conhecimento e harmonia.</p>
+  <p>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre o projeto</a>
+    <a href="privacidade.html">Política de privacidade</a>
+  </p>
 </footer>
 
 </body>
