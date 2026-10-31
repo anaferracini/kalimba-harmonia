@@ -4,13 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Consulte a política de privacidade do Kalimba Harmonia e saiba como são tratadas as informações dos visitantes.">
 <title>Política de Privacidade | Kalimba Harmonia</title>
 <style>
 :root {
-  --creme: #F5F0E3;
-  --madeira: #D6B98C;
-  --verde: #456B4A;
+  --creme: #f5f0e3;
+  --madeira: #d6b98c;
+  --verde: #456b4a;
   --escuro: #344638;
+  --branco: #fffdf8;
 }
 * { box-sizing: border-box; }
 body {
@@ -26,11 +28,18 @@ header {
   padding: 25px 7%;
 }
 header h1 { margin: 0; }
-nav { margin-top: 12px; }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 12px;
+}
 nav a {
   color: white;
   text-decoration: none;
-  margin-right: 16px;
+}
+nav a:hover, footer a:hover {
+  text-decoration: underline;
 }
 main {
   max-width: 900px;
@@ -44,7 +53,7 @@ main {
   margin-bottom: 25px;
 }
 section {
-  background: white;
+  background: var(--branco);
   padding: 25px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -57,16 +66,30 @@ footer {
   padding: 20px;
   margin-top: 40px;
 }
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+}
+@media (max-width: 600px) {
+  header { padding: 22px 5%; }
+  main { padding: 25px 15px; }
+  .hero, section { padding: 22px; }
+}
 </style>
 </head>
 <body>
 
 <header>
   <h1>Kalimba Harmonia</h1>
-  <nav>
+  <nav aria-label="Menu principal">
     <a href="index.html">Início</a>
     <a href="curso.html">Curso</a>
-    <a href="biblioteca.html">Biblioteca</a>
+    <a href="biblioteca.html">Cifras</a>
+    <a href="gospel.html">Música cristã</a>
+    <a href="hinarios.html">Hinários</a>
+    <a href="mundo.html">Mundo</a>
+    <a href="composicao.html">Composição</a>
     <a href="sobre.html">Sobre</a>
   </nav>
 </header>
@@ -86,18 +109,25 @@ footer {
     <p>
       O Kalimba Harmonia valoriza a privacidade dos visitantes
       e busca tratar informações pessoais com transparência,
-      responsabilidade e respeito à legislação aplicável.
+      responsabilidade e respeito à legislação aplicável,
+      incluindo a Lei Geral de Proteção de Dados Pessoais (LGPD),
+      quando aplicável.
     </p>
   </section>
 
   <section>
-    <h2>2. Informações coletadas</h2>
+    <h2>2. Informações e dados pessoais</h2>
     <p>
-      As informações coletadas dependerão dos recursos
-      disponibilizados no site. Caso sejam incluídos formulários,
-      comentários, ferramentas de análise ou outros serviços,
-      esta política deverá ser atualizada para explicar quais
-      dados são tratados e com qual finalidade.
+      Os dados eventualmente tratados dependem dos recursos
+      disponíveis no site e dos serviços utilizados para
+      disponibilizá-lo.
+    </p>
+    <p>
+      Caso sejam adicionados formulários, comentários,
+      ferramentas de análise ou outros recursos que envolvam
+      dados pessoais, esta política deverá ser atualizada
+      para informar quais dados são tratados, suas finalidades
+      e as respectivas bases legais.
     </p>
   </section>
 
@@ -105,63 +135,80 @@ footer {
     <h2>3. Cookies e tecnologias semelhantes</h2>
     <p>
       O site poderá utilizar cookies ou tecnologias semelhantes
-      caso sejam adicionadas ferramentas de análise, publicidade
-      ou outros serviços externos.
+      caso sejam implementadas ferramentas de análise,
+      publicidade ou outros serviços externos.
     </p>
     <p>
-      Quando esses recursos forem implementados, serão fornecidas
-      informações sobre sua finalidade e sobre as opções de
-      gerenciamento disponíveis aos visitantes.
+      Se esses recursos forem utilizados, serão apresentadas
+      informações sobre suas finalidades e, quando necessário,
+      opções para gerenciamento das preferências.
     </p>
   </section>
 
   <section>
     <h2>4. Serviços de terceiros</h2>
     <p>
-      O site poderá utilizar serviços externos para hospedagem,
-      análise de acesso ou publicidade. Esses serviços podem
-      possuir suas próprias políticas de privacidade.
+      A hospedagem do site e eventuais recursos externos podem
+      ser fornecidos por terceiros, que possuem suas próprias
+      políticas e práticas de privacidade.
     </p>
     <p>
-      Os fornecedores efetivamente utilizados deverão ser
-      identificados nesta política antes da publicação.
+      Os serviços efetivamente utilizados deverão ser
+      identificados nesta política, com links para suas
+      respectivas informações de privacidade, quando disponíveis.
     </p>
   </section>
 
   <section>
     <h2>5. Direitos dos visitantes</h2>
     <p>
-      Quando houver tratamento de dados pessoais, os visitantes
-      poderão exercer os direitos previstos na Lei Geral de
-      Proteção de Dados Pessoais (LGPD), conforme aplicável.
+      Quando houver tratamento de dados pessoais, os titulares
+      poderão exercer os direitos previstos na LGPD, conforme
+      aplicável, incluindo solicitar informações sobre o
+      tratamento e exercer os demais direitos previstos em lei.
     </p>
   </section>
 
   <section>
-    <h2>6. Atualizações desta política</h2>
+    <h2>6. Segurança das informações</h2>
+    <p>
+      Buscamos adotar cuidados razoáveis para proteger as
+      informações eventualmente tratadas. Nenhum ambiente
+      digital, entretanto, pode ter sua segurança garantida
+      de forma absoluta.
+    </p>
+  </section>
+
+  <section>
+    <h2>7. Atualizações desta política</h2>
     <p>
       Esta política poderá ser atualizada quando novos recursos
-      forem adicionados ou quando houver mudanças nas práticas
-      de privacidade do site.
+      forem adicionados, quando os serviços utilizados mudarem
+      ou quando houver alterações nas práticas de privacidade.
     </p>
-  </section>
+      </section>
 
   <section>
-    <h2>7. Contato</h2>
+    <h2>8. Contato</h2>
     <p>
-      Um canal de contato para questões relacionadas à privacidade
-      deverá ser informado aqui antes da publicação definitiva.
+      Para dúvidas ou solicitações relacionadas à privacidade,
+      utilize o seguinte canal de contato:
     </p>
+    <p><strong>Contato:</strong> [INSERIR E-MAIL DE CONTATO]</p>
     <p>
-      <strong>Importante:</strong> este texto é um modelo inicial.
-      Deve ser revisado e adaptado às ferramentas e práticas reais
-      do site antes de ser publicado.
+      Substitua o texto entre colchetes por um endereço de
+      contato válido antes da publicação.
     </p>
   </section>
 </main>
 
 <footer>
   <p>Kalimba Harmonia — Música, conhecimento e harmonia.</p>
+  <p>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre o projeto</a>
+    <a href="privacidade.html">Política de privacidade</a>
+  </p>
 </footer>
 
 </body>
