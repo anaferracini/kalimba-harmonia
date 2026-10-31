@@ -1,0 +1,280 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pesquise aulas, cifras, músicas e conteúdos sobre kalimba no Kalimba Harmonia.">
+<title>Buscar | Kalimba Harmonia</title>
+<style>
+:root {
+  --creme: #f5f0e3;
+  --madeira: #d6b98c;
+  --verde: #456b4a;
+  --escuro: #344638;
+  --branco: #fffdf8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: var(--creme);
+  color: var(--escuro);
+  line-height: 1.8;
+}
+header {
+  background: var(--escuro);
+  color: white;
+  padding: 25px 7%;
+}
+header h1 { margin: 0; }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 12px;
+}
+nav a, footer a {
+  color: white;
+  text-decoration: none;
+}
+nav a:hover, footer a:hover { text-decoration: underline; }
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 35px 20px;
+}
+.hero {
+  background: var(--madeira);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+section {
+  background: var(--branco);
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+h2 { color: var(--verde); }
+.search-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+input {
+  flex: 1;
+  min-width: 180px;
+  padding: 13px;
+  border: 1px solid #b7aa91;
+  border-radius: 7px;
+  font: inherit;
+}
+button {
+  padding: 13px 22px;
+  border: none;
+  border-radius: 7px;
+  background: var(--verde);
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+button:hover { background: var(--escuro); }
+.resultado {
+  border-bottom: 1px solid #e5dece;
+  padding: 15px 0;
+}
+.resultado:last-child { border-bottom: none; }
+.resultado h3 { margin: 0 0 5px; color: var(--verde); }
+.resultado a {
+  color: var(--verde);
+  font-weight: bold;
+}
+#mensagem { margin-top: 15px; }
+footer {
+  background: var(--escuro);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+footer a { margin: 0 8px; }
+@media (max-width: 600px) {
+  header { padding: 22px 5%; }
+  main { padding: 25px 15px; }
+  .hero, section { padding: 22px; }
+  button { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Kalimba Harmonia</h1>
+  <nav aria-label="Menu principal">
+    <a href="index.html">Início</a>
+    <a href="curso.html">Curso</a>
+    <a href="biblioteca.html">Cifras</a>
+    <a href="gospel.html">Música cristã</a>
+    <a href="hinarios.html">Hinários</a>
+    <a href="mundo.html">Mundo</a>
+    <a href="composicao.html">Composição</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h2>Buscar no Kalimba Harmonia</h2>
+    <p>Encontre aulas, cifras, repertórios e conteúdos para sua jornada musical.</p>
+    <form class="search-form" id="formBusca">
+      <input type="search" id="campoBusca" name="q"
+        placeholder="O que você deseja encontrar?"
+        aria-label="Digite o assunto que deseja pesquisar">
+      <button type="submit">Pesquisar</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Resultados da pesquisa</h2>
+    <div id="resultados" aria-live="polite"></div>
+    <p id="mensagem">Digite uma palavra ou assunto para começar.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Kalimba Harmonia — Música, conhecimento e harmonia.</p>
+  <p>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre o projeto</a>
+    <a href="privacidade.html">Política de privacidade</a>
+  </p>
+</footer>
+
+<script>
+const paginas = [
+  {
+    titulo: "Curso de Kalimba",
+    url: "curso.html",
+    descricao: "Aulas passo a passo, notas, ritmos, escalas e exercícios.",
+    palavras: "curso aulas iniciante aprender kalimba notas números ritmo escalas acordes afinação prática"
+  },
+  {
+    titulo: "Biblioteca de Cifras",
+    url: "biblioteca.html",
+    descricao: "Cifras, melodias e exercícios para praticar na kalimba.",
+    palavras: "biblioteca cifras músicas melodias exercícios partituras números prática"
+  },
+  {
+    titulo: "Música Cristã",
+    url: "gospel.html",
+    descricao: "Conteúdos sobre louvores, adoração e música cristã.",
+    palavras: "gospel cristã louvor adoração salmos cânticos hinos música religiosa"
+  },
+  {
+    titulo: "Hinários",
+    url: "hinarios.html",
+    descricao: "Harpa Cristã, hinários e história dos hinos.",
+    palavras: "hinários harpa cristã hinos evangélicos cânticos história hinologia"
+  },
+  {
+    titulo: "Músicas do Mundo",
+    url: "mundo.html",
+    descricao: "Conheça músicas e tradições de diferentes regiões do mundo.",
+    palavras: "mundo culturas africa ásia europa oceania américa latina música tradicional"
+  },
+  {
+    titulo: "Composição Musical",
+    url: "composicao.html",
+    descricao: "Aprenda sobre melodias, escalas, ritmos, acordes e arranjos.",
+    palavras: "composição criar compor melodia escalas ritmo acordes arranjos criatividade"
+  },
+  {
+    titulo: "Sobre o Projeto",
+    url: "sobre.html",
+    descricao: "Conheça a proposta e o compromisso editorial do Kalimba Harmonia.",
+    palavras: "sobre projeto proposta compromisso editorial kalimba"
+  },
+  {
+    titulo: "Política de Privacidade",
+    url: "privacidade.html",
+    descricao: "Consulte as informações sobre privacidade do site.",
+    palavras: "privacidade dados pessoais cookies lgpd contato"
+  }
+];
+
+function normalizar(texto) {
+  return texto.toLocaleLowerCase("pt-BR")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
+function pesquisar(termo) {
+  const consulta = normalizar(termo);
+  const area = document.getElementById("resultados");
+  const mensagem = document.getElementById("mensagem");
+
+  area.innerHTML = "";
+
+  if (!consulta) {
+    mensagem.textContent = "Digite uma palavra ou assunto para começar.";
+    return;
+  }
+
+  const palavrasConsulta = consulta.split(/\s+/);
+
+  const encontrados = paginas.filter(pagina => {
+    const conteudo = normalizar(
+      pagina.titulo + " " + pagina.descricao + " " + pagina.palavras
+    );
+    return palavrasConsulta.every(palavra => conteudo.includes(palavra));
+  });
+
+  if (encontrados.length === 0) {
+    mensagem.textContent = "Nenhum resultado encontrado. Tente outra palavra.";
+    return;
+  }
+
+  mensagem.textContent =
+    encontrados.length + " resultado(s) encontrado(s):";
+
+  encontrados.forEach(pagina => {
+    const item = document.createElement("article");
+    item.className = "resultado";
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = pagina.titulo;
+
+    const descricao = document.createElement("p");
+    descricao.textContent = pagina.descricao;
+
+    const link = document.createElement("a");
+    link.href = pagina.url;
+    link.textContent = "Acessar página";
+
+    item.append(titulo, descricao, link);
+    area.appendChild(item);
+  });
+}
+
+const campo = document.getElementById("campoBusca");
+const parametros = new URLSearchParams(window.location.search);
+const buscaInicial = parametros.get("q") || "";
+
+campo.value = buscaInicial;
+if (buscaInicial) pesquisar(buscaInicial);
+
+document.getElementById("formBusca").addEventListener("submit", function(event) {
+  event.preventDefault();
+  const termo = campo.value.trim();
+  const url = new URL(window.location.href);
+  url.searchParams.set("q", termo);
+  window.history.replaceState({}, "", url);
+  pesquisar(termo);
+});
+</script>
+
+</body>
+</html>
+```
