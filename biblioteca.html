@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Biblioteca de melodias e cifras para kalimba de 17 teclas.">
+  <title>Biblioteca de Cifras | Kalimba Harmonia</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f0e3;
+      color: #344638;
+      line-height: 1.6;
+    }
+    header, footer {
+      background: #344638;
+      color: white;
+      padding: 20px 7%;
+    }
+    header a, footer a { color: #f5f0e3; text-decoration: none; }
+    main { max-width: 1000px; margin: auto; padding: 35px 20px 60px; }
+    h1, h2 { font-family: Georgia, serif; }
+    h1 { font-size: 38px; }
+    .intro {
+      background: #e6ddca;
+      padding: 28px;
+      border-radius: 12px;
+    }
+    .filters {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 12px;
+      margin: 28px 0;
+    }
+    input, select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d6b98c;
+      border-radius: 8px;
+      background: white;
+      font-size: 15px;
+    }
+    .songs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    .song {
+      background: #fffdf8;
+      border: 1px solid #e1d4bd;
+      padding: 22px;
+      border-radius: 12px;
+    }
+    .song h2 { color: #456b4a; font-size: 21px; }
+    .tag {
+      display: inline-block;
+      background: #e5eadf;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+    .notes {
+      background: #f5f0e3;
+      padding: 12px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 18px;
+      letter-spacing: 2px;
+      overflow-wrap: anywhere;
+    }
+    .notice {
+      background: #fffdf8;
+      padding: 18px;
+      border-left: 4px solid #456b4a;
+      margin-top: 28px;
+    }
+    .back { display: inline-block; margin-bottom: 18px; }
+    #empty { display: none; padding: 20px; }
+    @media(max-width: 650px) {
+      .filters { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><strong>♫ Kalimba Harmonia</strong></a>
+  </header>
+
+  <main>
+    <a class="back" href="index.html">← Voltar ao início</a>
+
+    <section class="intro">
+      <h1>Biblioteca de cifras</h1>
+      <p>
+        Descubra melodias, consulte sequências numéricas e
+        encontre materiais para praticar na sua kalimba.
+      </p>
+      <strong>Instrumento de referência: 17 teclas em Dó maior.</strong>
+    </section>
+
+    <section class="filters" aria-label="Filtros de músicas">
+      <input id="search" type="search"
+        placeholder="Pesquisar por título ou categoria..."
+        aria-label="Pesquisar músicas">
+
+      <select id="category" aria-label="Filtrar categoria">
+        <option value="">Todas as categorias</option>
+        <option value="original">Melodias originais</option>
+        <option value="cristã">Música cristã</option>
+        <option value="popular">Música popular</option>
+      </select>
+
+      <select id="level" aria-label="Filtrar dificuldade">
+        <option value="">Todos os níveis</option>
+        <option value="Iniciante">Iniciante</option>
+        <option value="Intermediário">Intermediário</option>
+        <option value="Avançado">Avançado</option>
+      </select>
+    </section>
+
+    <h2>Melodias disponíveis</h2>
+
+    <section class="songs" id="songs">
+      <article class="song" data-category="original" data-level="Iniciante">
+        <span class="tag">Original</span>
+        <h2>Pequena Jornada</h2>
+        <p>Dificuldade: Iniciante</p>
+        <p>Exercício autoral para praticar a escala de Dó maior.</p>
+        <p class="notes">1 · 2 · 3 · 2 · 1</p>
+        <small>Exemplo didático, não é uma música tradicional.</small>
+      </article>
+
+      <article class="song" data-category="original" data-level="Intermediário">
+        <span class="tag">Original</span>
+        <h2>Passos Musicais</h2>
+        <p>Dificuldade: Intermediário</p>
+        <p>Exercício de deslocamento entre notas.</p>
+        <p class="notes">1 · 3 · 5 · 3 · 2 · 4 · 2 · 1</p>
+        <small>Exemplo didático, não é uma música tradicional.</small>
+      </article>
+
+      <article class="song" data-category="cristã" data-level="Iniciante">
+        <span class="tag">Música cristã</span>
+        <h2>Espaço para louvores</h2>
+        <p>Dificuldade: A definir</p>
+        <p>Esta categoria receberá músicas com autoria e fontes verificadas.</p>
+        <small>Nenhuma cifra publicada nesta categoria ainda.</small>
+      </article>
+
+      <article class="song" data-category="popular" data-level="Iniciante">
+        <span class="tag">Música popular</span>
+        <h2>Espaço para repertório popular</h2>
+        <p>Dificuldade: A definir</p>
+        <p>Esta categoria receberá melodias revisadas para kalimba.</p>
+        <small>Nenhuma cifra publicada nesta categoria ainda.</small>
+      </article>
+    </section>
+
+    <p id="empty">Nenhum resultado encontrado. Experimente outra pesquisa.</p>
+
+    <section class="notice">
+      <strong>Sobre as cifras</strong>
+      <p>
+        As melodias serão identificadas por autoria, tonalidade,
+        fontes e adaptações. Mudanças de oitava, simplificações
+        e transposições serão informadas quando necessárias.
+      </p>
+      <p>
+        Letras e partituras protegidas por direitos autorais
+        só serão disponibilizadas quando houver autorização
+        ou outra base legal aplicável.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Kalimba Harmonia</strong>
+    <p>Sua música começa aqui.</p>
+    <a href="index.html">Página inicial</a>
+  </footer>
+
+  <script>
+    const search = document.getElementById("search");
+    const category = document.getElementById("category");
+    const level = document.getElementById("level");
+    const cards = document.querySelectorAll(".song");
+    const empty = document.getElementById("empty");
+
+    function filterSongs() {
+      const term = search.value.toLocaleLowerCase("pt-BR");
+      let visible = 0;
+
+      cards.forEach(card => {
+        const matchesText = card.textContent.toLocaleLowerCase("pt-BR").includes(term);
+        const matchesCategory = !category.value || card.dataset.category === category.value;
+        const matchesLevel = !level.value || card.dataset.level === level.value;
+        const show = matchesText && matchesCategory && matchesLevel;
+
+        card.hidden = !show;
+        if (show) visible++;
+      });
+
+      empty.style.display = visible ? "none" : "block";
+    }
+
+    search.addEventListener("input", filterSongs);
+    category.addEventListener("change", filterSongs);
+    level.addEventListener("change", filterSongs);
+  </script>
+</body>
+</html>
