@@ -1,13 +1,16 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Biblioteca de melodias e cifras para kalimba de 17 teclas.">
+  <meta name="description" content="Biblioteca de melodias, exercícios e cifras para kalimba de 17 teclas.">
+  <meta name="theme-color" content="#344638">
   <title>Biblioteca de Cifras | Kalimba Harmonia</title>
+
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -15,53 +18,123 @@
       color: #344638;
       line-height: 1.6;
     }
-    header, footer {
+
+    header {
       background: #344638;
       color: white;
-      padding: 20px 7%;
+      padding: 18px 5%;
     }
-    header a, footer a { color: #f5f0e3; text-decoration: none; }
-    main { max-width: 1000px; margin: auto; padding: 35px 20px 60px; }
-    h1, h2 { font-family: Georgia, serif; }
-    h1 { font-size: 38px; }
+
+    .header-content {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      color: #fffdf8;
+      text-decoration: none;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    nav a, footer a {
+      color: #f5f0e3;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover, footer a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 35px 20px 60px;
+    }
+
+    h1, h2 {
+      font-family: Georgia, serif;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-top: 0;
+    }
+
     .intro {
       background: #e6ddca;
-      padding: 28px;
+      padding: 30px;
       border-radius: 12px;
     }
+
+    .intro p {
+      max-width: 700px;
+    }
+
     .filters {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       gap: 12px;
       margin: 28px 0;
     }
+
     input, select {
       width: 100%;
       padding: 13px;
       border: 1px solid #d6b98c;
       border-radius: 8px;
       background: white;
+      color: #344638;
       font-size: 15px;
     }
+
+    input:focus, select:focus {
+      outline: 2px solid #456b4a;
+      outline-offset: 2px;
+    }
+
     .songs {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
+      gap: 18px;
     }
+
     .song {
       background: #fffdf8;
       border: 1px solid #e1d4bd;
       padding: 22px;
       border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(52, 70, 56, 0.05);
     }
-    .song h2 { color: #456b4a; font-size: 21px; }
+
+    .song h2 {
+      color: #456b4a;
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
     .tag {
       display: inline-block;
       background: #e5eadf;
+      color: #344638;
       padding: 4px 10px;
       border-radius: 20px;
       font-size: 12px;
     }
+
     .notes {
       background: #f5f0e3;
       padding: 12px;
@@ -71,26 +144,86 @@
       letter-spacing: 2px;
       overflow-wrap: anywhere;
     }
+
     .notice {
       background: #fffdf8;
-      padding: 18px;
+      padding: 20px;
       border-left: 4px solid #456b4a;
-      margin-top: 28px;
+      margin-top: 32px;
+      border-radius: 0 8px 8px 0;
     }
-    .back { display: inline-block; margin-bottom: 18px; }
-    #empty { display: none; padding: 20px; }
-    @media(max-width: 650px) {
-      .filters { grid-template-columns: 1fr; }
+
+    #empty {
+      display: none;
+      padding: 20px;
+      background: #fffdf8;
+      border-radius: 8px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    footer {
+      background: #344638;
+      color: white;
+      padding: 25px 5%;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 750px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 10px 14px;
+      }
+
+      .filters {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <header>
-    <a href="index.html"><strong>♫ Kalimba Harmonia</strong></a>
+    <div class="header-content">
+      <a class="logo" href="index.html">♫ Kalimba Harmonia</a>
+
+      <nav aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="curso.html">Curso</a>
+        <a href="biblioteca.html">Cifras</a>
+        <a href="gospel.html">Música cristã</a>
+        <a href="hinarios.html">Hinários</a>
+        <a href="mundo.html">Mundo</a>
+        <a href="composicao.html">Composição</a>
+        <a href="sobre.html">Sobre</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <a class="back" href="index.html">← Voltar ao início</a>
 
     <section class="intro">
       <h1>Biblioteca de cifras</h1>
@@ -98,22 +231,25 @@
         Descubra melodias, consulte sequências numéricas e
         encontre materiais para praticar na sua kalimba.
       </p>
-      <strong>Instrumento de referência: 17 teclas em Dó maior.</strong>
+      <strong>Instrumento de referência: kalimba de 17 teclas em Dó maior.</strong>
     </section>
 
     <section class="filters" aria-label="Filtros de músicas">
-      <input id="search" type="search"
+      <input
+        id="search"
+        type="search"
         placeholder="Pesquisar por título ou categoria..."
-        aria-label="Pesquisar músicas">
+        aria-label="Pesquisar melodias"
+      >
 
-      <select id="category" aria-label="Filtrar categoria">
+      <select id="category" aria-label="Filtrar por categoria">
         <option value="">Todas as categorias</option>
         <option value="original">Melodias originais</option>
         <option value="cristã">Música cristã</option>
         <option value="popular">Música popular</option>
       </select>
 
-      <select id="level" aria-label="Filtrar dificuldade">
+      <select id="level" aria-label="Filtrar por dificuldade">
         <option value="">Todos os níveis</option>
         <option value="Iniciante">Iniciante</option>
         <option value="Intermediário">Intermediário</option>
@@ -124,19 +260,20 @@
     <h2>Melodias disponíveis</h2>
 
     <section class="songs" id="songs">
+
       <article class="song" data-category="original" data-level="Iniciante">
-        <span class="tag">Original</span>
+        <span class="tag">Melodia original</span>
         <h2>Pequena Jornada</h2>
-        <p>Dificuldade: Iniciante</p>
+        <p><strong>Dificuldade:</strong> Iniciante</p>
         <p>Exercício autoral para praticar a escala de Dó maior.</p>
         <p class="notes">1 · 2 · 3 · 2 · 1</p>
         <small>Exemplo didático, não é uma música tradicional.</small>
       </article>
 
       <article class="song" data-category="original" data-level="Intermediário">
-        <span class="tag">Original</span>
+        <span class="tag">Melodia original</span>
         <h2>Passos Musicais</h2>
-        <p>Dificuldade: Intermediário</p>
+        <p><strong>Dificuldade:</strong> Intermediário</p>
         <p>Exercício de deslocamento entre notas.</p>
         <p class="notes">1 · 3 · 5 · 3 · 2 · 4 · 2 · 1</p>
         <small>Exemplo didático, não é uma música tradicional.</small>
@@ -145,21 +282,30 @@
       <article class="song" data-category="cristã" data-level="Iniciante">
         <span class="tag">Música cristã</span>
         <h2>Espaço para louvores</h2>
-        <p>Dificuldade: A definir</p>
-        <p>Esta categoria receberá músicas com autoria e fontes verificadas.</p>
+        <p><strong>Dificuldade:</strong> A definir</p>
+        <p>
+          Esta categoria receberá músicas com autoria,
+          fontes e adaptações verificadas.
+        </p>
         <small>Nenhuma cifra publicada nesta categoria ainda.</small>
       </article>
 
       <article class="song" data-category="popular" data-level="Iniciante">
         <span class="tag">Música popular</span>
         <h2>Espaço para repertório popular</h2>
-        <p>Dificuldade: A definir</p>
-        <p>Esta categoria receberá melodias revisadas para kalimba.</p>
+        <p><strong>Dificuldade:</strong> A definir</p>
+        <p>
+          Esta categoria receberá melodias revisadas
+          e adaptadas para kalimba.
+        </p>
         <small>Nenhuma cifra publicada nesta categoria ainda.</small>
       </article>
+
     </section>
 
-    <p id="empty">Nenhum resultado encontrado. Experimente outra pesquisa.</p>
+    <p id="empty" role="status">
+      Nenhum resultado encontrado. Experimente outra pesquisa ou altere os filtros.
+    </p>
 
     <section class="notice">
       <strong>Sobre as cifras</strong>
@@ -174,12 +320,20 @@
         ou outra base legal aplicável.
       </p>
     </section>
+
   </main>
 
   <footer>
-    <strong>Kalimba Harmonia</strong>
+    <strong>♫ Kalimba Harmonia</strong>
     <p>Sua música começa aqui.</p>
-    <a href="index.html">Página inicial</a>
+
+    <div class="footer-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre o projeto</a>
+      <a href="privacidade.html">Política de privacidade</a>
+    </div>
+
+    <p>© 2026 Kalimba Harmonia</p>
   </footer>
 
   <script>
@@ -189,17 +343,29 @@
     const cards = document.querySelectorAll(".song");
     const empty = document.getElementById("empty");
 
+    function normalizeText(text) {
+      return text
+        .toLocaleLowerCase("pt-BR")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
     function filterSongs() {
-      const term = search.value.toLocaleLowerCase("pt-BR");
+      const term = normalizeText(search.value.trim());
       let visible = 0;
 
       cards.forEach(card => {
-        const matchesText = card.textContent.toLocaleLowerCase("pt-BR").includes(term);
-        const matchesCategory = !category.value || card.dataset.category === category.value;
-        const matchesLevel = !level.value || card.dataset.level === level.value;
+        const cardText = normalizeText(card.textContent);
+        const matchesText = cardText.includes(term);
+        const matchesCategory =
+          !category.value || card.dataset.category === category.value;
+        const matchesLevel =
+          !level.value || card.dataset.level === level.value;
+
         const show = matchesText && matchesCategory && matchesLevel;
 
         card.hidden = !show;
+
         if (show) visible++;
       });
 
@@ -210,5 +376,7 @@
     category.addEventListener("change", filterSongs);
     level.addEventListener("change", filterSongs);
   </script>
+
 </body>
 </html>
+```
