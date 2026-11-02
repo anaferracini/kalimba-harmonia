@@ -1,0 +1,59 @@
+{
+  "2": {
+    "title": "Como ler os números da kalimba",
+    "subtitle": "Os números representam os graus da escala e ajudam a localizar cada nota.",
+    "focus": "Comece pela lâmina central e siga a sequência indicada na cifra.",
+    "legend": [
+      [
+        "1",
+        "Dó",
+        "#d92f2f"
+      ],
+      [
+        "2",
+        "Ré",
+        "#f07822"
+      ],
+      [
+        "3",
+        "Mi",
+        "#f2c500"
+      ],
+      [
+        "4",
+        "Fá",
+        "#69a936"
+      ],
+      [
+        "5",
+        "Sol",
+        "#287bc4"
+      ],
+      [
+        "6",
+        "Lá",
+        "#8060a8"
+      ],
+      [
+        "7",
+        "Si",
+        "#d64c91"
+      ]
+    ],
+    "example_label": "Exemplo de leitura",
+    "example_text": "Leia os números na ordem e toque uma lâmina por vez.",
+    "sequence": [
+      "1",
+      "3",
+      "5",
+      "3",
+      "1"
+    ],
+    "tip_title": "Dica musical",
+    "tip": "Identifique o número antes de tocar. O apóstrofo indica uma oitava mais aguda.",
+    "callouts": [
+      "Centro: 1 = Dó",
+      "Leia da esquerda para a direita na cifra"
+    ]
+  }
+}
