@@ -7,7 +7,6 @@
 <meta name="description" content="Curso de Kalimba Harmonia: aprenda kalimba do primeiro contato às primeiras melodias.">
 <title>Curso de Kalimba | Kalimba Harmonia</title>
 
-
 <style>
 :root {
   --creme: #f5f0e3;
@@ -326,6 +325,7 @@ th {
 .checklist input {
   margin-top: 7px;
   accent-color: var(--verde);
+  flex-shrink: 0;
 }
 
 .progresso {
@@ -516,6 +516,7 @@ adotado e como conferir a afinação do instrumento.
 <div class="caixa-exercicio">
 <h3>Exercício: escute e compare</h3>
 <p><strong>Tempo sugerido:</strong> 5 minutos</p>
+
 <div class="checklist" data-checklist>
 <label><input type="checkbox"> Segure a kalimba de maneira confortável.</label>
 <label><input type="checkbox"> Toque uma lâmina e espere o som terminar.</label>
@@ -614,6 +615,8 @@ prestando atenção à clareza de cada som.
 <div class="caixa-exercicio">
 <h3>Exercício: movimento controlado</h3>
 <p><strong>Tempo sugerido:</strong> 5 a 7 minutos</p>
+<p>Realize cada etapa e marque a caixa correspondente quando terminar:</p>
+
 <div class="checklist" data-checklist>
 <label><input type="checkbox"> Segure a kalimba durante 30 segundos sem apertá-la excessivamente.</label>
 <label><input type="checkbox"> Toque uma lâmina com o polegar esquerdo.</label>
@@ -1540,6 +1543,68 @@ se transformam em música.
   <p>Aprenda, pratique e descubra sua música.</p>
   <p><a href="index.html">Voltar à página inicial</a></p>
 </footer>
+
+<!-- SCRIPT DE CONTAGEM DOS EXERCÍCIOS -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const listas = document.querySelectorAll(".checklist");
+
+  listas.forEach(function(lista) {
+
+    const caixas = lista.querySelectorAll(
+      'input[type="checkbox"]'
+    );
+
+    // Ignora listas que contêm apenas perguntas de múltipla escolha.
+    if (caixas.length === 0) {
+      return;
+    }
+
+    const contador = lista.querySelector(".progresso");
+
+    if (!contador) {
+      return;
+    }
+
+    // Preserva o tipo de descrição original do contador.
+    const textoOriginal = contador.textContent.toLowerCase();
+
+    let descricao = "itens concluídos";
+
+    if (textoOriginal.includes("habilidades")) {
+      descricao = "habilidades revisadas";
+    } else if (textoOriginal.includes("atividades")) {
+      descricao = "atividades concluídas";
+    }
+
+    function atualizarProgresso() {
+
+      const total = caixas.length;
+
+      const concluidas = lista.querySelectorAll(
+        'input[type="checkbox"]:checked'
+      ).length;
+
+      contador.textContent =
+        concluidas + " de " + total + " " + descricao;
+
+    }
+
+    // Atualiza a contagem sempre que uma caixa for marcada
+    // ou desmarcada.
+    caixas.forEach(function(caixa) {
+      caixa.addEventListener("change", atualizarProgresso);
+    });
+
+    // Mostra a contagem correta assim que a página é carregada.
+    atualizarProgresso();
+
+  });
+
+});
+</script>
 
 </body>
 </html>
