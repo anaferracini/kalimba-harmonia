@@ -1487,13 +1487,27 @@ se transformam em música.
 </p>
 
 <div class="proxima-aula">
-Módulo 1 concluído! Em breve: Módulo 2 — Ampliando seus conhecimentos musicais.
+    <h3>Módulo 1 concluído!</h3>
+
+    <p>
+        Parabéns por concluir as dez primeiras aulas do Kalimba Harmonia!
+        Você já tem uma base para continuar desenvolvendo suas habilidades musicais.
+    </p>
+
+    <p>
+        Agora chegou a hora de avançar para o Módulo 2 — Notas, escalas e ritmo.
+    </p>
+
+    <a href="#modulo-2" class="botao-modulo">
+        Começar o Módulo 2 →
+    </a>
 </div>
+
 </section>
-  
 
 <style>
 /* MÓDULO 2 — KALIMBA HARMONIA */
+
 .modulo-curso {
   max-width: 900px;
   margin: 40px auto;
@@ -1504,36 +1518,43 @@ Módulo 1 concluído! Em breve: Módulo 2 — Ampliando seus conhecimentos music
   font-family: Arial, sans-serif;
   line-height: 1.75;
 }
+
 .modulo-curso h2 {
   color: #456b4a;
   font-size: 28px;
   border-bottom: 2px solid #d6b98c;
   padding-bottom: 12px;
 }
+
 .modulo-curso h3 {
   color: #456b4a;
   margin-top: 28px;
 }
+
 .modulo-curso .introducao {
   background: #f5f0e3;
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 28px;
 }
+
 .modulo-curso table {
   width: 100%;
   border-collapse: collapse;
   margin: 18px 0;
 }
+
 .modulo-curso th,
 .modulo-curso td {
   border: 1px solid #d6b98c;
   padding: 10px;
   text-align: left;
 }
+
 .modulo-curso th {
   background: #f5f0e3;
 }
+
 .modulo-curso .exercicio {
   background: #f5f0e3;
   padding: 18px;
@@ -1541,6 +1562,7 @@ Módulo 1 concluído! Em breve: Módulo 2 — Ampliando seus conhecimentos music
   border-radius: 10px;
   margin: 20px 0;
 }
+
 .modulo-curso .sequencia {
   display: block;
   text-align: center;
@@ -1553,20 +1575,24 @@ Módulo 1 concluído! Em breve: Módulo 2 — Ampliando seus conhecimentos music
   border-radius: 10px;
   margin: 14px 0;
 }
+
 .modulo-curso .atividade {
   display: block;
   margin: 12px 0;
   cursor: pointer;
 }
+
 .modulo-curso .atividade input {
   margin-right: 9px;
   accent-color: #456b4a;
 }
+
 .modulo-curso .progresso {
   font-weight: bold;
   color: #456b4a;
   margin-top: 14px;
 }
+
 .modulo-curso .proxima {
   margin-top: 30px;
   padding: 16px;
@@ -1574,23 +1600,97 @@ Módulo 1 concluído! Em breve: Módulo 2 — Ampliando seus conhecimentos music
   border-radius: 10px;
   font-weight: bold;
 }
-@media(max-width:600px) {
-  .modulo-curso { padding: 17px; margin: 20px 10px; }
-  .modulo-curso h2 { font-size: 23px; }
-  .modulo-curso table { font-size: 14px; }
+
+/* BOTÃO PARA ACESSAR O MÓDULO 2 */
+
+.botao-modulo {
+  display: inline-block;
+  background: #456b4a;
+  color: #fffdf8;
+  padding: 13px 24px;
+  margin-top: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  transition: background 0.3s;
 }
+
+.botao-modulo:hover {
+  background: #344638;
+  color: #fffdf8;
+}
+
+/* GARANTE A EXIBIÇÃO DO MÓDULO 2 */
+
+#modulo-2 {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  scroll-margin-top: 90px;
+}
+
+/* ÍNDICE DAS AULAS DO MÓDULO 2 */
+
+.modulo-curso .indice-modulo2 {
+  background: #f8f4eb;
+  border: 1px solid #e6ddca;
+  border-radius: 12px;
+  padding: 22px;
+  margin: 25px 0;
+}
+
+.modulo-curso .indice-modulo2 ol {
+  padding-left: 25px;
+  columns: 2;
+}
+
+.modulo-curso .indice-modulo2 li {
+  margin: 7px 0;
+}
+
+.modulo-curso .indice-modulo2 a {
+  color: #456b4a;
+  text-decoration: none;
+}
+
+.modulo-curso .indice-modulo2 a:hover {
+  text-decoration: underline;
+}
+
+/* AJUSTES PARA CELULARES */
+
+@media(max-width:600px) {
+  .modulo-curso {
+    padding: 17px;
+    margin: 20px 10px;
+  }
+
+  .modulo-curso h2 {
+    font-size: 23px;
+  }
+
+  .modulo-curso table {
+    font-size: 14px;
+  }
+
+  .modulo-curso .indice-modulo2 ol {
+    columns: 1;
+  }
+}
+
 </style>
 
 <section class="modulo-curso" id="modulo-2">
 
-<header class="introducao">
+<div class="introducao">
   <p><strong>CURSO: KALIMBA HARMONIA</strong></p>
   <h2>Módulo 2 — Notas, escalas e ritmo</h2>
   <p>Você vai passar da leitura de pequenas sequências para a compreensão de como as notas se relacionam.</p>
   <p><strong>Aulas 11 a 20</strong></p>
-</header>
+</div>
 
-<nav class="introducao">
+<div class="indice-modulo2">
   <strong>Neste módulo:</strong>
   <ol>
     <li><a href="#aula11">Entendendo as oitavas</a></li>
@@ -1604,7 +1704,7 @@ Módulo 1 concluído! Em breve: Módulo 2 — Ampliando seus conhecimentos music
     <li><a href="#aula19">Melodias com diferentes ritmos</a></li>
     <li><a href="#aula20">Revisão e desafio musical</a></li>
   </ol>
-</nav>
+</div>
 
 <!-- AULA 11 -->
 <article id="aula11">
