@@ -1,320 +1,1542 @@
-```html
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Curso gratuito de kalimba: aprenda a ler números, tocar melodias, compreender acordes e criar arranjos.">
-  <meta name="theme-color" content="#344638">
-  <title>Curso de Kalimba | Kalimba Harmonia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Curso de Kalimba Harmonia: aprenda kalimba do primeiro contato às primeiras melodias.">
+<title>Curso de Kalimba | Kalimba Harmonia</title>
 
-  <style>
-    :root {
-      --cream: #f5f0e3;
-      --wood: #d6b98c;
-      --green: #456b4a;
-      --dark: #344638;
-      --white: #fffdf8;
-      --border: #e5d8c2;
-    }
+<style>
+:root {
+  --creme: #f5f0e3;
+  --madeira: #d6b98c;
+  --verde: #456b4a;
+  --escuro: #344638;
+  --branco: #fffdf8;
+  --texto: #394238;
+  --borda: #e6ddca;
+}
 
-    * { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
-    body {
-      margin: 0;
-      background: var(--cream);
-      color: var(--dark);
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
-    }
+body {
+  background: var(--creme);
+  color: var(--texto);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.75;
+}
 
-    header {
-      background: var(--white);
-      padding: 18px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      border-bottom: 1px solid var(--wood);
-    }
+/* CABEÇALHO */
 
-    .logo {
-      color: var(--green);
-      font: bold 25px Georgia, serif;
-      text-decoration: none;
-    }
+header {
+  background: var(--escuro);
+  color: var(--branco);
+  text-align: center;
+  padding: 45px 20px;
+}
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
+.logo {
+  color: var(--madeira);
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
 
-    nav a {
-      color: var(--dark);
-      font-size: 14px;
-      text-decoration: none;
-    }
+header h1 {
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: normal;
+  margin: 10px 0;
+}
 
-    nav a:hover {
-      color: var(--green);
-      text-decoration: underline;
-    }
+header p {
+  color: #eee5d6;
+  max-width: 650px;
+  margin: auto;
+}
 
-    main {
-      max-width: 1050px;
-      margin: auto;
-      padding: 35px 20px 60px;
-    }
+/* MENU */
 
-    .intro {
-      background: linear-gradient(135deg, #e6ddca, var(--cream));
-      padding: 35px;
-      border-radius: 14px;
-      margin-bottom: 35px;
-    }
+nav {
+  background: var(--branco);
+  border-bottom: 1px solid var(--borda);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    h1, h2, h3 { font-family: Georgia, serif; }
+nav a {
+  color: var(--verde);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
 
-    h1 {
-      font-size: clamp(32px, 5vw, 45px);
-      margin: 15px 0;
-    }
+nav a:hover {
+  color: var(--escuro);
+  text-decoration: underline;
+}
 
-    .tag {
-      display: inline-block;
-      background: #e5eadf;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 13px;
-    }
+/* CONTEÚDO */
 
-    .intro p { max-width: 750px; }
+.container {
+  max-width: 1050px;
+  margin: 35px auto;
+  padding: 0 18px 60px;
+}
 
-    .module {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 25px;
-      margin: 18px 0;
-    }
+.introducao {
+  background: var(--branco);
+  border-left: 5px solid var(--madeira);
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
 
-    .module h2 {
-      color: var(--green);
-      margin-top: 0;
-    }
+.modulo {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(52,70,56,0.05);
+}
 
-    .module li { margin: 9px 0; }
+.modulo h2 {
+  color: var(--escuro);
+  font-size: 27px;
+  margin-bottom: 10px;
+}
 
-    .module ol { padding-left: 25px; }
+.modulo-descricao {
+  color: #687365;
+  margin-bottom: 20px;
+}
 
-    .module li::marker {
-      color: var(--green);
-      font-weight: bold;
-    }
+/* ÍNDICE */
 
-    .study-tip {
-      background: #e5eadf;
-      padding: 25px;
-      border-radius: 12px;
-      margin-top: 35px;
-    }
+.indice {
+  background: #f8f4eb;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 22px;
+  margin: 25px 0;
+}
 
-    .back {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: var(--green);
-      font-weight: bold;
-      text-decoration: none;
-    }
+.indice h3 {
+  color: var(--escuro);
+  margin-bottom: 12px;
+}
 
-    footer {
-      background: var(--dark);
-      color: white;
-      padding: 30px 7%;
-      text-align: center;
-    }
+.indice ol {
+  padding-left: 25px;
+  columns: 2;
+  column-gap: 35px;
+}
 
-    footer a {
-      color: #e9d5ad;
-      margin: 0 8px;
-    }
+.indice li {
+  margin: 7px 0;
+  break-inside: avoid;
+}
 
-    @media (max-width: 650px) {
-      header { justify-content: center; }
-      nav { justify-content: center; }
-      .intro { padding: 25px; }
-      .module { padding: 19px; }
-    }
-  </style>
+.indice a {
+  color: var(--verde);
+  text-decoration: none;
+}
+
+.indice a:hover {
+  text-decoration: underline;
+}
+
+/* AULAS */
+
+.aula {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 30px;
+  margin: 25px 0;
+  box-shadow: 0 5px 20px rgba(52,70,56,0.05);
+  scroll-margin-top: 90px;
+}
+
+.aula h2 {
+  color: var(--escuro);
+  font-size: 25px;
+  border-bottom: 2px solid var(--madeira);
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.identificacao {
+  color: var(--verde);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.aula h3 {
+  color: var(--escuro);
+  font-size: 19px;
+  margin: 25px 0 10px;
+}
+
+.aula p {
+  margin: 12px 0;
+}
+
+.aula ul,
+.aula ol {
+  padding-left: 25px;
+  margin: 12px 0;
+}
+
+.aula li {
+  margin-bottom: 8px;
+}
+
+/* TABELAS */
+
+.tabela-conteudo {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+}
+
+th, td {
+  border: 1px solid var(--borda);
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background: #e9efdf;
+  color: var(--escuro);
+}
+
+/* DESTAQUES */
+
+.caixa-exercicio {
+  background: #f5f0e3;
+  border-left: 5px solid var(--verde);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.caixa-exercicio h3 {
+  margin-top: 0;
+}
+
+.sequencia {
+  background: var(--escuro);
+  color: var(--branco);
+  text-align: center;
+  padding: 18px;
+  border-radius: 8px;
+  margin: 18px 0;
+  font-size: 23px;
+  letter-spacing: 3px;
+}
+
+.sequencia small {
+  display: block;
+  color: var(--madeira);
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+.atencao {
+  background: #f8f0df;
+  border-left: 5px solid #c49b58;
+  padding: 17px;
+  margin: 20px 0;
+  border-radius: 7px;
+}
+
+.proxima-aula {
+  background: #e9efdf;
+  color: var(--escuro);
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+/* CHECKLIST */
+
+.checklist {
+  background: #f8f4eb;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.checklist label {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+.checklist input {
+  margin-top: 7px;
+  accent-color: var(--verde);
+}
+
+.progresso {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: var(--verde);
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* RODAPÉ */
+
+footer {
+  background: var(--escuro);
+  color: #eee5d6;
+  text-align: center;
+  padding: 30px 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+footer a {
+  color: var(--madeira);
+  text-decoration: none;
+}
+
+@media(max-width:650px) {
+  .indice ol {
+    columns: 1;
+  }
+
+  .aula,
+  .modulo {
+    padding: 21px;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  .sequencia {
+    font-size: 19px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <a class="logo" href="index.html">♫ Kalimba Harmonia</a>
-
-  <nav aria-label="Menu principal">
-    <a href="index.html">Início</a>
-    <a href="curso.html">Curso</a>
-    <a href="biblioteca.html">Cifras</a>
-    <a href="gospel.html">Música cristã</a>
-    <a href="hinarios.html">Hinários</a>
-    <a href="mundo.html">Músicas do mundo</a>
-    <a href="composicao.html">Composição</a>
-    <a href="sobre.html">Sobre</a>
-  </nav>
+  <div class="logo">♫ Kalimba Harmonia</div>
+  <h1>Curso de Kalimba</h1>
+  <p>Do primeiro contato às primeiras melodias. Aprenda, pratique e descubra sua música.</p>
 </header>
 
-<main>
+<nav>
+  <a href="index.html">Início</a>
+  <a href="curso.html">Curso</a>
+  <a href="biblioteca.html">Biblioteca</a>
+  <a href="gospel.html">Gospel</a>
+  <a href="sobre.html">Sobre</a>
+</nav>
 
-  <a class="back" href="index.html">← Voltar ao início</a>
+<main class="container">
 
-  <section class="intro">
-    <span class="tag">Curso de 50 aulas</span>
+<section class="introducao">
+  <h2>Bem-vindo ao curso Kalimba Harmonia!</h2>
+  <p>
+    Este curso foi desenvolvido para acompanhar você desde os primeiros
+    contatos com a kalimba até a criação e interpretação de músicas.
+    Cada aula apresenta explicações, exercícios e desafios para desenvolver
+    suas habilidades musicais gradualmente.
+  </p>
+</section>
 
-    <h1>Aprenda a tocar kalimba</h1>
+<section class="modulo">
+  <h2>Módulo 1 — Primeiros passos</h2>
 
-    <p>
-      Um caminho progressivo para conhecer seu instrumento,
-      ler números, desenvolver técnica, compreender harmonia
-      e criar suas próprias melodias.
-    </p>
+  <p class="modulo-descricao">
+    Do primeiro contato às primeiras melodias. Você conhecerá o instrumento,
+    aprenderá a identificar as teclas e começará a tocar com segurança.
+  </p>
 
-    <p>
-      <strong>Instrumento de referência:</strong>
-      kalimba de 17 teclas em Dó maior.
-    </p>
-
-    <p>
-      O curso está organizado em cinco módulos. Você pode
-      acompanhar a sequência no seu ritmo e praticar cada
-      conteúdo antes de avançar.
-    </p>
-  </section>
-
-  <h2>Seu caminho de aprendizagem</h2>
-
-  <section class="module" id="modulo1">
-    <h2>Módulo 1 — Primeiros passos</h2>
-    <p>Conheça o instrumento e aprenda a interpretar suas primeiras melodias.</p>
+  <div class="indice">
+    <h3>Conteúdo do módulo</h3>
     <ol>
-      <li>Conhecendo a kalimba</li>
-      <li>Postura e posição das mãos</li>
-      <li>Como ler notas em números</li>
-      <li>Conhecendo as 17 teclas</li>
-      <li>A escala de Dó maior</li>
-      <li>Primeiros exercícios com os polegares</li>
-      <li>Lendo sequências numéricas</li>
-      <li>Conhecendo o ritmo</li>
-      <li>Sua primeira melodia</li>
-      <li>Revisão dos primeiros passos</li>
+      <li><a href="#aula1">Conhecendo a kalimba</a></li>
+      <li><a href="#aula2">Postura e posição das mãos</a></li>
+      <li><a href="#aula3">Conhecendo as 17 teclas</a></li>
+      <li><a href="#aula4">Aprendendo a notação numérica</a></li>
+      <li><a href="#aula5">Primeiros exercícios</a></li>
+      <li><a href="#aula6">Entendendo a sequência musical</a></li>
+      <li><a href="#aula7">Ritmo e duração das notas</a></li>
+      <li><a href="#aula8">Sua primeira melodia</a></li>
+      <li><a href="#aula9">Como praticar sem se perder</a></li>
+      <li><a href="#aula10">Revisão e desafio musical</a></li>
     </ol>
-  </section>
+  </div>
+</section>
 
-  <section class="module" id="modulo2">
-    <h2>Módulo 2 — Ritmo e técnica</h2>
-    <p>Desenvolva coordenação, precisão e controle durante a execução.</p>
-    <ol start="11">
-      <li>Alternância dos polegares</li>
-      <li>Coordenação das mãos</li>
-      <li>Compassos e contagem</li>
-      <li>Pausas musicais</li>
-      <li>Andamento e metrônomo</li>
-      <li>Dinâmica: tocar suave e forte</li>
-      <li>Saltos entre notas</li>
-      <li>Praticando a memória musical</li>
-      <li>Como estudar melodias difíceis</li>
-      <li>Desafio de técnica</li>
-    </ol>
-  </section>
+<!-- AULA 1 -->
 
-  <section class="module" id="modulo3">
-    <h2>Módulo 3 — Harmonia e acompanhamento</h2>
-    <p>Entenda como as notas se relacionam e como acompanhar melodias.</p>
-    <ol start="21">
-      <li>Melodia e acompanhamento</li>
-      <li>Conhecendo os intervalos</li>
-      <li>O que são acordes?</li>
-      <li>Acordes maiores e menores</li>
-      <li>Como ler símbolos de acordes</li>
-      <li>Primeiros acompanhamentos</li>
-      <li>Arpejos na kalimba</li>
-      <li>Padrões de acompanhamento</li>
-      <li>Inversões de acordes</li>
-      <li>Montando um arranjo simples</li>
-    </ol>
-  </section>
+<section class="aula" id="aula1">
+<h2>Aula 1 — Conhecendo a kalimba</h2>
+<div class="identificacao">Módulo 1 · Primeiros passos</div>
 
-  <section class="module" id="modulo4">
-    <h2>Módulo 4 — Expressão e repertório</h2>
-    <p>Aprenda a interpretar músicas e explorar os recursos do instrumento.</p>
-    <ol start="31">
-      <li>Articulação musical</li>
-      <li>Ornamentos e pequenas variações</li>
-      <li>Recursos de expressão</li>
-      <li>Como interpretar uma melodia</li>
-      <li>Escolhendo o andamento</li>
-      <li>Acidentes musicais</li>
-      <li>Adaptando músicas às 17 teclas</li>
-      <li>Como escolher seu repertório</li>
-      <li>Afinação e conservação</li>
-      <li>Gravando e avaliando sua execução</li>
-    </ol>
-  </section>
+<h3>1. O que é uma kalimba?</h3>
+<p>
+A kalimba é um instrumento musical de pequenas dimensões que produz sons
+quando suas lâminas metálicas são dedilhadas. É conhecida por seu timbre
+suave, cristalino e relaxante.
+</p>
+<p>
+O instrumento possui uma base de madeira ou outro material, sobre a qual
+ficam presas lâminas metálicas de diferentes comprimentos. Cada lâmina
+produz uma nota musical. Em geral, as lâminas mais curtas produzem sons
+mais agudos, enquanto as mais longas produzem sons mais graves.
+</p>
+<p>
+A kalimba é relativamente fácil de transportar e pode ser utilizada para
+tocar melodias, acompanhar canções e criar composições próprias.
+</p>
 
-  <section class="module" id="modulo5">
-    <h2>Módulo 5 — Criatividade e projeto final</h2>
-    <p>Reúna o que aprendeu e desenvolva sua própria composição.</p>
-    <ol start="41">
-      <li>Organizando sua rotina de estudos</li>
-      <li>Memorização musical</li>
-      <li>Treinando o ouvido</li>
-      <li>Primeiros passos na improvisação</li>
-      <li>Criando uma melodia original</li>
-      <li>Escolhendo uma harmonia</li>
-      <li>Criando introduções e finais</li>
-      <li>Construindo um arranjo completo</li>
-      <li>Preparando uma apresentação</li>
-      <li>Projeto final: sua música na kalimba</li>
-    </ol>
-  </section>
+<h3>2. Conhecendo as partes do instrumento</h3>
+<p><strong>Lâminas metálicas:</strong> são as partes que você toca com os polegares. Cada lâmina corresponde a uma nota musical. A vibração delas produz o som.</p>
+<p><strong>Corpo do instrumento:</strong> é a estrutura que sustenta as lâminas. Dependendo do modelo, o corpo também ajuda a amplificar e a ressoar o som.</p>
+<p><strong>Orifício sonoro:</strong> alguns modelos possuem uma abertura na madeira que contribui para a ressonância. Nem todas as kalimbas têm esse orifício.</p>
 
-  <section class="study-tip">
-    <h2>Como aproveitar melhor o curso</h2>
-    <ul>
-      <li>Estude uma aula por vez.</li>
-      <li>Repita os exercícios até compreender o movimento.</li>
-      <li>Pratique devagar antes de aumentar a velocidade.</li>
-      <li>Escute atentamente cada nota.</li>
-      <li>Não avance apenas para terminar as aulas: procure compreender o conteúdo.</li>
-    </ul>
+<h3>3. Como o som é produzido?</h3>
+<p>Quando você pressiona suavemente a ponta de uma lâmina e a solta, ela vibra. Essa vibração gera o som que ouvimos.</p>
 
-    <p>
-      <strong>Próximo passo:</strong>
-      visite a biblioteca para encontrar exercícios e melodias
-      para praticar.
-    </p>
+<div class="caixa-exercicio">
+<h3>Experimente fazer o seguinte:</h3>
+<ol>
+<li>Segure a kalimba com as duas mãos, apoiando suas laterais.</li>
+<li>Escolha uma lâmina próxima ao centro.</li>
+<li>Use a ponta de um polegar para pressioná-la levemente para baixo.</li>
+<li>Solte a lâmina e escute o som.</li>
+<li>Repita o movimento, tentando produzir um som claro e sem ruídos desnecessários.</li>
+</ol>
+<p>Não é necessário usar muita força. O objetivo é encontrar um movimento confortável e controlado.</p>
+</div>
 
-    <a class="back" href="biblioteca.html">Ir para a biblioteca de cifras →</a>
-  </section>
+<h3>4. Por que aprenderemos com uma kalimba de 17 teclas?</h3>
+<p>
+Neste curso, usaremos como referência uma kalimba de 17 lâminas afinada
+em Dó maior. Essa configuração é bastante utilizada por iniciantes porque
+permite estudar as sete notas naturais da escala musical em diferentes oitavas.
+</p>
+
+<div class="tabela-conteudo">
+<table>
+<thead><tr><th>Nota musical</th><th>Número</th></tr></thead>
+<tbody>
+<tr><td>Dó</td><td>1</td></tr>
+<tr><td>Ré</td><td>2</td></tr>
+<tr><td>Mi</td><td>3</td></tr>
+<tr><td>Fá</td><td>4</td></tr>
+<tr><td>Sol</td><td>5</td></tr>
+<tr><td>Lá</td><td>6</td></tr>
+<tr><td>Si</td><td>7</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>
+Quando as notas se repetem em oitavas diferentes, usaremos marcas para
+distinguir suas alturas. Nesta etapa, começaremos com as notas básicas;
+a leitura detalhada das oitavas virá nas próximas aulas.
+</p>
+
+<div class="atencao">
+<strong>Atenção:</strong> alguns métodos e instrumentos usam convenções
+diferentes de numeração. Por isso, o blog explicará claramente o sistema
+adotado e como conferir a afinação do instrumento.
+</div>
+
+<h3>5. Seu primeiro exercício</h3>
+<p>Não precisa tocar uma música ainda. A primeira atividade é aprender a reconhecer o som das lâminas.</p>
+
+<div class="caixa-exercicio">
+<h3>Exercício: escute e compare</h3>
+<p><strong>Tempo sugerido:</strong> 5 minutos</p>
+<div class="checklist" data-checklist>
+<label><input type="checkbox"> Segure a kalimba de maneira confortável.</label>
+<label><input type="checkbox"> Toque uma lâmina e espere o som terminar.</label>
+<label><input type="checkbox"> Toque a mesma lâmina novamente, com um movimento suave.</label>
+<label><input type="checkbox"> Experimente uma lâmina vizinha e compare os sons.</label>
+<label><input type="checkbox"> Repita o exercício sem apertar os polegares com força.</label>
+<div class="progresso">0 de 5 atividades concluídas</div>
+</div>
+</div>
+
+<h3>6. Erros comuns de quem está começando</h3>
+<ul>
+<li><strong>Tocar com força excessiva:</strong> pode deixar o movimento desconfortável e prejudicar o controle do som.</li>
+<li><strong>Tocar várias lâminas sem intenção:</strong> no início, pratique uma nota de cada vez.</li>
+<li><strong>Não esperar o som terminar:</strong> escutar a ressonância também faz parte do aprendizado.</li>
+<li><strong>Acreditar que todas as kalimbas são iguais:</strong> a disposição, a afinação e as marcações podem variar conforme o modelo.</li>
+</ul>
+
+<h3>7. O que você aprendeu?</h3>
+<p>
+Ao terminar esta aula, você deve saber explicar o que é uma kalimba,
+identificar suas principais partes e compreender como uma lâmina produz som.
+</p>
+<p>
+Não se preocupe em memorizar todas as notas agora. Nas próximas aulas,
+vamos aprender a segurar o instrumento corretamente e reconhecer a posição
+das 17 lâminas.
+</p>
+
+<div class="proxima-aula">Próxima aula: Aula 2 — Postura e posição das mãos.</div>
+</section>
+
+<!-- AULA 2 -->
+
+<section class="aula" id="aula2">
+<h2>Aula 2 — Postura e posição das mãos</h2>
+<div class="identificacao">Módulo 1 · Primeiros passos</div>
+
+<h3>1. Por que a postura importa?</h3>
+<p>
+Aprender um instrumento não significa apenas descobrir quais notas tocar.
+Também é importante encontrar uma posição que permita tocar com conforto,
+precisão e liberdade de movimento.
+</p>
+<p>
+Na kalimba, as mãos sustentam o corpo do instrumento enquanto os polegares
+tocam as lâminas. Uma postura confortável facilita o controle dos movimentos
+e ajuda a evitar tensão desnecessária.
+</p>
+
+<h3>2. Como segurar a kalimba</h3>
+<ol>
+<li>Sente-se em uma posição confortável, mantendo os ombros relaxados.</li>
+<li>Segure as laterais do instrumento com as duas mãos.</li>
+<li>Deixe os dedos apoiarem a parte de trás ou as laterais, conforme o formato da kalimba.</li>
+<li>Posicione os polegares sobre as lâminas, sem pressioná-las continuamente.</li>
+<li>Mantenha os punhos em uma posição natural, sem dobrá-los excessivamente.</li>
+</ol>
+<p>
+O instrumento deve ficar firme, mas não apertado. Se você perceber que está
+prendendo a respiração ou enrijecendo os ombros, pare por alguns segundos
+e ajuste a posição.
+</p>
+
+<h3>3. Qual parte do polegar deve tocar?</h3>
+<p>
+A região próxima à ponta do polegar costuma ser suficiente para dedilhar
+as lâminas. A posição exata pode variar de acordo com o comprimento dos
+polegares, o formato das unhas e a construção do instrumento.
+</p>
+<p>
+Experimente movimentos pequenos e controlados. O objetivo não é empurrar
+a lâmina muito para baixo, mas soltá-la de modo que ela vibre livremente.
+</p>
+<p>
+Se as unhas estiverem muito curtas e o toque ficar desconfortável, ajuste
+o ângulo do polegar. Não é necessário deixar as unhas crescerem para aprender.
+</p>
+
+<h3>4. Como distribuir o trabalho entre as mãos</h3>
+<p>
+Na kalimba de 17 teclas que usaremos, as notas mais graves ficam geralmente
+próximas ao centro, e as notas vão alternando entre os lados à medida que
+a altura aumenta.
+</p>
+<p>
+Por isso, você utilizará os dois polegares para alcançar diferentes lâminas.
+Não tente tocar todas as notas apenas com a mão dominante.
+</p>
+<p>
+Uma boa forma de começar é alternar os polegares em notas próximas,
+prestando atenção à clareza de cada som.
+</p>
+
+<h3>5. Exercício prático de coordenação</h3>
+<div class="caixa-exercicio">
+<h3>Exercício: movimento controlado</h3>
+<p><strong>Tempo sugerido:</strong> 5 a 7 minutos</p>
+<div class="checklist" data-checklist>
+<label><input type="checkbox"> Segure a kalimba durante 30 segundos sem apertá-la excessivamente.</label>
+<label><input type="checkbox"> Toque uma lâmina com o polegar esquerdo.</label>
+<label><input type="checkbox"> Toque uma lâmina com o polegar direito.</label>
+<label><input type="checkbox"> Alterne os polegares lentamente, uma nota por vez.</label>
+<label><input type="checkbox"> Faça uma pausa e confira se seus ombros e punhos continuam relaxados.</label>
+<div class="progresso">0 de 5 atividades concluídas</div>
+</div>
+</div>
+
+<h3>6. Como saber se está fazendo corretamente?</h3>
+<p>Observe três pontos:</p>
+<ul>
+<li><strong>Conforto:</strong> você consegue segurar o instrumento sem dor ou tensão excessiva.</li>
+<li><strong>Controle:</strong> consegue escolher uma lâmina sem tocar acidentalmente nas vizinhas.</li>
+<li><strong>Clareza:</strong> o som aparece sem que você precise usar muita força.</li>
+</ul>
+<p>Se sentir dor, interrompa a prática e ajuste a posição. O aprendizado deve acontecer gradualmente.</p>
+
+<h3>7. Desafio da aula</h3>
+<p>
+Segure a kalimba e toque cinco notas isoladas, alternando os polegares
+sempre que for confortável. Entre cada nota, espere o som começar a desaparecer.
+</p>
+<p>O desafio não é tocar depressa. É conseguir produzir cada nota intencionalmente.</p>
+
+<div class="proxima-aula">Próxima aula: Aula 3 — Conhecendo as 17 teclas.</div>
+</section>
+
+<!-- AULA 3 -->
+
+<section class="aula" id="aula3">
+<h2>Aula 3 — Conhecendo as 17 teclas</h2>
+<div class="identificacao">Módulo 1 · Primeiros passos</div>
+
+<h3>1. Entendendo a organização das lâminas</h3>
+<p>
+Uma kalimba de 17 teclas em Dó maior normalmente possui 17 lâminas
+metálicas, cada uma afinada para produzir uma altura musical específica.
+</p>
+<p>
+A disposição pode parecer diferente de um teclado de piano. Em vez de
+colocar as notas em uma linha reta, a kalimba costuma organizar as lâminas
+em uma sequência alternada: as notas mais graves ficam perto do centro,
+e as mais agudas se distribuem para os lados.
+</p>
+<p>Isso permite alcançar notas de diferentes alturas com movimentos relativamente pequenos dos polegares.</p>
+
+<h3>2. Quais notas encontramos na kalimba?</h3>
+<p>Na afinação convencional em Dó maior, as notas naturais se repetem ao longo das diferentes oitavas.</p>
+
+<div class="tabela-conteudo">
+<table>
+<thead><tr><th>Número</th><th>Nota</th><th>Nome internacional</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Dó</td><td>C</td></tr>
+<tr><td>2</td><td>Ré</td><td>D</td></tr>
+<tr><td>3</td><td>Mi</td><td>E</td></tr>
+<tr><td>4</td><td>Fá</td><td>F</td></tr>
+<tr><td>5</td><td>Sol</td><td>G</td></tr>
+<tr><td>6</td><td>Lá</td><td>A</td></tr>
+<tr><td>7</td><td>Si</td><td>B</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>
+Depois do Si, a sequência natural volta ao Dó, agora em uma oitava mais aguda.
+</p>
+<div class="atencao">
+<strong>Importante:</strong> a tabela apresenta as sete notas naturais,
+não a posição física exata de cada lâmina. Para identificar todas as 17
+teclas corretamente, precisamos considerar a oitava de cada nota e a
+afinação real do instrumento.
+</div>
+
+<h3>3. Por que as notas ficam alternadas?</h3>
+<p>
+A disposição alternada ajuda a distribuir as notas entre os dois polegares.
+Em muitos modelos de 17 teclas, a lâmina central é a nota mais grave do
+conjunto, e as lâminas seguintes alternam entre os lados em alturas
+progressivamente maiores.
+</p>
+<p>
+Não é necessário decorar todas as posições de uma vez. Comece reconhecendo
+a região central e observe como as lâminas mudam de comprimento.
+</p>
+
+<h3>4. Exercício de observação</h3>
+<div class="caixa-exercicio">
+<h3>Conhecendo seu instrumento</h3>
+<div class="checklist" data-checklist>
+<label><input type="checkbox"> Conte as 17 lâminas da sua kalimba.</label>
+<label><input type="checkbox"> Observe quais lâminas ficam próximas ao centro.</label>
+<label><input type="checkbox"> Compare o comprimento de três lâminas diferentes.</label>
+<label><input type="checkbox"> Veja se há números ou nomes gravados nas lâminas.</label>
+<label><input type="checkbox"> Confira se o modelo está identificado como afinado em Dó maior.</label>
+<div class="progresso">0 de 5 atividades concluídas</div>
+</div>
+</div>
+
+<h3>5. Um cuidado importante</h3>
+<p>
+Nem toda kalimba possui números gravados. Algumas apresentam apenas as
+notas musicais, enquanto outras não têm marcações. Além disso, instrumentos
+podem ter sido afinados de maneira diferente da afinação original de fábrica.
+</p>
+<p>
+Por isso, o próximo passo será aprender a interpretar a notação numérica
+sem depender exclusivamente das marcações físicas.
+</p>
+
+<div class="proxima-aula">Próxima aula: Aula 4 — Aprendendo a notação numérica.</div>
+</section>
+
+<!-- AULA 4 -->
+
+<section class="aula" id="aula4">
+<h2>Aula 4 — Aprendendo a notação numérica</h2>
+<div class="identificacao">Módulo 1 · Primeiros passos</div>
+
+<h3>1. O que é a notação numérica?</h3>
+<p>
+A notação numérica é uma maneira de representar as notas musicais usando
+números. Em vez de precisar ler uma partitura tradicional desde o início,
+o aluno pode acompanhar uma sequência numérica e aprender quais lâminas deve tocar.
+</p>
+<p>Neste blog, adotaremos a seguinte correspondência para a escala de Dó maior:</p>
+
+<div class="tabela-conteudo">
+<table>
+<thead><tr><th>Número</th><th>Nota</th><th>Símbolo internacional</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Dó</td><td>C</td></tr>
+<tr><td>2</td><td>Ré</td><td>D</td></tr>
+<tr><td>3</td><td>Mi</td><td>E</td></tr>
+<tr><td>4</td><td>Fá</td><td>F</td></tr>
+<tr><td>5</td><td>Sol</td><td>G</td></tr>
+<tr><td>6</td><td>Lá</td><td>A</td></tr>
+<tr><td>7</td><td>Si</td><td>B</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>
+Essa correspondência é a base do nosso método. Quando surgirem notas
+em oitavas diferentes, usaremos marcações adicionais para distingui-las.
+</p>
+
+<h3>2. Como ler uma sequência?</h3>
+<p>Imagine que você encontre esta sequência:</p>
+<div class="sequencia">
+1 · 2 · 3 · 4
+<small>Dó · Ré · Mi · Fá</small>
+</div>
+<p>
+Você deverá tocar uma nota de cada vez, seguindo a ordem da esquerda
+para a direita.
+</p>
+<p>
+A sequência não indica necessariamente que todas as notas devem ter
+a mesma duração. Isso dependerá do ritmo apresentado na aula ou na música.
+Por enquanto, tocaremos cada nota com calma, deixando um pequeno intervalo entre elas.
+</p>
+
+<h3>3. Como entender os espaços entre os números?</h3>
+<p>
+Em nossos exercícios, utilizaremos espaços ou separadores para facilitar a leitura.
+</p>
+<ul>
+<li><strong>1 2 3 4:</strong> quatro notas tocadas em sequência.</li>
+<li><strong>1 1 2 2:</strong> a primeira nota é repetida antes de passar à segunda.</li>
+<li><strong>1 — 2 — 3:</strong> os traços indicarão pausas ou sustentação, conforme a legenda específica do exercício.</li>
+</ul>
+<p>
+O traço não possui um significado universal em todos os métodos de kalimba.
+Por isso, cada aula explicará como interpretar os símbolos utilizados.
+</p>
+
+<h3>4. E quando a nota aparece em outra oitava?</h3>
+<p>
+Uma oitava é o intervalo entre uma nota e a próxima nota com o mesmo nome,
+mais aguda ou mais grave.
+</p>
+<p>
+Por exemplo, um Dó grave e um Dó agudo compartilham o nome da nota,
+mas não possuem a mesma altura sonora.
+</p>
+<p>
+Neste curso, vamos acrescentar marcas à notação quando necessário.
+Assim, você não confundirá notas de mesmo nome que aparecem em regiões
+diferentes do instrumento.
+</p>
+
+<h3>5. Exercício de leitura</h3>
+<p>Leia cada sequência em voz alta antes de tocar:</p>
+
+<div class="caixa-exercicio">
+<strong>Sequência A</strong>
+<div class="sequencia">1 · 2 · 3<small>Dó · Ré · Mi</small></div>
+
+<strong>Sequência B</strong>
+<div class="sequencia">3 · 2 · 1<small>Mi · Ré · Dó</small></div>
+
+<strong>Sequência C</strong>
+<div class="sequencia">1 · 1 · 2 · 3<small>Dó · Dó · Ré · Mi</small></div>
+</div>
+
+<h3>Teste rápido</h3>
+<p>Qual nota corresponde ao número 5 no nosso sistema?</p>
+<div class="checklist">
+<label><input type="radio" name="teste4"> Dó</label>
+<label><input type="radio" name="teste4"> Fá</label>
+<label><input type="radio" name="teste4" data-correct="true"> Sol</label>
+<label><input type="radio" name="teste4"> Si</label>
+</div>
+
+<div class="proxima-aula">Próxima aula: Aula 5 — Primeiros exercícios.</div>
+</section>
+
+<!-- AULA 5 -->
+
+<section class="aula" id="aula5">
+<h2>Aula 5 — Primeiros exercícios na kalimba</h2>
+<div class="identificacao">Módulo 1 · Primeiros passos</div>
+
+<h3>1. O objetivo dos primeiros exercícios</h3>
+<p>Antes de tocar melodias completas, você precisa desenvolver três habilidades:</p>
+<ul>
+<li>localizar a nota desejada;</li>
+<li>tocar a lâmina sem esbarrar nas vizinhas;</li>
+<li>controlar o movimento para produzir um som claro.</li>
+</ul>
+<p>
+Essas habilidades parecem simples, mas são a base para tocar músicas mais longas.
+Dedicar alguns minutos a elas pode tornar as próximas aulas muito mais fáceis.
+</p>
+
+<h3>2. Exercício 1 — Uma nota de cada vez</h3>
+<p>
+Começaremos com os números 1, 2 e 3, correspondentes a Dó, Ré e Mi
+na nossa notação básica.
+</p>
+
+<div class="sequencia">
+1 → 2 → 3
+<small>Dó → Ré → Mi</small>
+</div>
+
+<ol>
+<li>Encontre a lâmina correspondente à nota 1.</li>
+<li>Toque-a e escute o som.</li>
+<li>Passe para a nota 2 e, depois, para a nota 3.</li>
+<li>Faça uma pausa e repita a sequência.</li>
+</ol>
+<p>
+Toque lentamente. Se precisar procurar cada lâmina antes de tocá-la,
+faça isso sem pressa. A rapidez virá com a familiaridade.
+</p>
+
+<h3>3. Exercício 2 — Subindo e descendo</h3>
+<p>Agora vamos praticar o movimento inverso.</p>
+
+<div class="sequencia">
+1 · 2 · 3 · 2 · 1
+<small>Dó · Ré · Mi · Ré · Dó</small>
+</div>
+
+<p>
+Toque a sequência inteira. Observe que, depois de chegar à nota 3,
+você retorna às notas anteriores.
+</p>
+<p>
+Esse tipo de exercício desenvolve a memória dos movimentos. Você começa
+a associar cada número à localização da lâmina correspondente.
+</p>
+
+<h3>4. Exercício 3 — Repetindo sem perder o controle</h3>
+<div class="caixa-exercicio">
+<h3>Desafio de repetição</h3>
+<div class="checklist" data-checklist>
+<label><input type="checkbox"> Toque 1 · 2 · 3 uma vez.</label>
+<label><input type="checkbox"> Repita 1 · 2 · 3 três vezes, lentamente.</label>
+<label><input type="checkbox"> Toque 3 · 2 · 1 duas vezes.</label>
+<label><input type="checkbox"> Tente tocar sem olhar constantemente para as mãos.</label>
+<label><input type="checkbox"> Escute se todas as notas estão soando claramente.</label>
+<div class="progresso">0 de 5 atividades concluídas</div>
+</div>
+</div>
+
+<h3>5. Como perceber seus avanços?</h3>
+<p>
+Você está progredindo quando consegue encontrar as lâminas com menos
+hesitação, controlar melhor o movimento dos polegares e perceber quando
+uma nota não soa como esperado.
+</p>
+<p>
+Não compare sua velocidade com a de outras pessoas. O objetivo é tocar
+de forma consciente, confortável e consistente.
+</p>
+
+<h3>6. Um erro que vale evitar</h3>
+<p>
+Não tente compensar uma nota errada acelerando a sequência. Pare,
+encontre novamente a lâmina e recomece. Corrigir um movimento devagar
+costuma ser mais útil do que repetir o erro muitas vezes.
+</p>
+
+<div class="proxima-aula">Próxima aula: Aula 6 — Entendendo a sequência musical.</div>
+</section>
+
+<!-- AULA 6 -->
+
+<section class="aula" id="aula6">
+<h2>Aula 6 — Entendendo a sequência musical</h2>
+<div class="identificacao">Módulo 1 · Primeiros passos</div>
+
+<h3>1. O que é uma sequência musical?</h3>
+<p>
+Uma sequência musical é uma organização de notas que devem ser executadas
+em determinada ordem. Ela pode ser curta, como três notas, ou longa,
+como uma melodia inteira.
+</p>
+
+<p>Observe estes dois exemplos:</p>
+
+<div class="caixa-exercicio">
+<strong>Sequência A</strong>
+<div class="sequencia">1 · 2 · 3<small>Dó · Ré · Mi</small></div>
+<strong>Sequência B</strong>
+<div class="sequencia">3 · 2 · 1<small>Mi · Ré · Dó</small></div>
+</div>
+
+<p>
+As duas sequências usam as mesmas notas, mas em ordens diferentes.
+Por isso, produzem resultados musicais diferentes. A ordem importa tanto
+quanto a escolha das notas.
+</p>
+
+<h3>2. Como dividir uma sequência em partes</h3>
+<p>
+Quando uma sequência parece difícil, você não precisa aprendê-la inteira
+de uma vez. Pode dividi-la em pequenos grupos.
+</p>
+
+<div class="sequencia">
+1 · 2 · 3 | 3 · 2 · 1
+<small>Primeiro grupo | Segundo grupo</small>
+</div>
+
+<p>
+Pratique primeiro 1 · 2 · 3. Quando conseguir tocá-lo com tranquilidade,
+pratique 3 · 2 · 1. Depois, una os dois grupos.
+</p>
+<p>
+Essa estratégia facilita a memorização e permite descobrir exatamente
+em qual trecho você precisa praticar mais.
+</p>
+
+<h3>3. Repetição não significa tocar errado</h3>
+<p>Uma nota repetida pode fazer parte de uma melodia. Veja:</p>
+
+<div class="sequencia">
+1 · 1 · 2 · 2 · 3
+<small>Dó · Dó · Ré · Ré · Mi</small>
+</div>
+
+<p>
+Nesse exemplo, o número 1 deve ser tocado duas vezes, assim como o número 2.
+Não passe para a próxima nota antes de realizar as repetições indicadas.
+</p>
+
+<h3>4. O que muda quando alteramos a ordem?</h3>
+<p>
+A sequência 1 · 2 · 3 sobe pelas notas naturais da escala. Já 3 · 2 · 1
+retorna na direção contrária.
+</p>
+<p>
+Quando você muda a ordem, modifica o contorno da melodia — isto é,
+a maneira como ela se movimenta entre sons mais graves e mais agudos.
+</p>
+<p>
+Aprender a reconhecer esses movimentos ajuda você a compreender músicas,
+em vez de apenas decorar números.
+</p>
+
+<h3>5. Exercício prático</h3>
+<p>Qual sequência começa na nota Mi e termina na nota Dó?</p>
+<div class="checklist">
+<label><input type="radio" name="teste6"> 1 · 2 · 3</label>
+<label><input type="radio" name="teste6"> 2 · 3 · 1</label>
+<label><input type="radio" name="teste6" data-correct="true"> 3 · 2 · 1</label>
+</div>
+
+<h3>6. Desafio da aula</h3>
+<p>
+Crie uma sequência com três números entre 1 e 3. Toque-a lentamente
+duas vezes. Depois, inverta a ordem e toque novamente.
+</p>
+<p>
+Observe como a mesma coleção de notas pode produzir uma sensação musical
+diferente quando a sequência muda.
+</p>
+
+<div class="proxima-aula">Próxima aula: Aula 7 — Ritmo e duração das notas.</div>
+</section>
+
+<!-- AULA 7 -->
+
+<section class="aula" id="aula7">
+<h2>Aula 7 — Ritmo e duração das notas</h2>
+<div class="identificacao">Módulo 1 · Primeiros passos</div>
+
+<h3>1. O que é ritmo?</h3>
+<p>
+O ritmo é a organização dos sons e dos silêncios ao longo do tempo.
+Ele determina quando as notas são tocadas, quanto tempo duram e como
+se relacionam umas com as outras.
+</p>
+<p>
+Duas pessoas podem tocar exatamente as mesmas notas, mas produzir
+resultados diferentes se uma tocar todas rapidamente e a outra deixar
+mais espaço entre elas.
+</p>
+<p>
+Por isso, aprender as notas é apenas uma parte do estudo musical.
+Também precisamos aprender a controlar o tempo.
+</p>
+
+<h3>2. O que é o pulso musical?</h3>
+<p>
+O pulso é uma marcação regular que nos ajuda a acompanhar a música.
+Você pode imaginá-lo como uma sequência constante de batidas.
+</p>
+
+<div class="sequencia">1 — 2 — 3 — 4<small>Contagem regular</small></div>
+
+<p>
+Tente manter intervalos semelhantes entre os números. Não precisa contar depressa.
+</p>
+<p>Depois, toque uma nota da kalimba a cada número contado:</p>
+<ul>
+<li>no primeiro pulso, toque a nota 1;</li>
+<li>no segundo pulso, toque a nota 2;</li>
+<li>no terceiro pulso, toque a nota 3;</li>
+<li>no quarto pulso, toque novamente a nota 2.</li>
+</ul>
+<p>A sequência será 1 · 2 · 3 · 2, com uma nota em cada pulso.</p>
+
+<h3>3. Notas longas e notas curtas</h3>
+<p>
+Uma nota curta ocupa menos tempo; uma nota longa permanece soando por
+mais tempo antes de você passar à próxima nota.
+</p>
+<p>
+Na kalimba, existe uma particularidade importante: depois que a lâmina
+é tocada, o som continua ressoando naturalmente. A duração escrita da
+nota indica o tempo musical que ela ocupa, não necessariamente o momento
+exato em que o som desaparece.
+</p>
+
+<div class="caixa-exercicio">
+<strong>Exemplo A — Uma nota por pulso</strong>
+<div class="sequencia">1 · 2 · 3 · 4</div>
+<p>Toque uma nota a cada contagem.</p>
+
+<strong>Exemplo B — Uma nota sustentada por dois pulsos</strong>
+<div class="sequencia">1 — — 2</div>
+<p>Toque a primeira nota e conte dois pulsos antes de tocar a segunda.</p>
+</div>
+
+<p>
+Neste segundo exemplo, os traços são apenas uma instrução didática para
+sustentar a contagem. Em partituras formais, a duração é representada
+por figuras rítmicas específicas.
+</p>
+
+<h3>4. Como praticar com um metrônomo</h3>
+<p>
+Um metrônomo produz batidas regulares para ajudar você a manter o andamento.
+Se tiver um aplicativo de metrônomo, comece em um andamento lento,
+como 60 batidas por minuto.
+</p>
+<p>Isso significa que você ouvirá aproximadamente uma batida por segundo.</p>
+<ol>
+<li>Ligue o metrônomo.</li>
+<li>Escute quatro batidas antes de tocar.</li>
+<li>Toque uma nota em cada batida.</li>
+<li>Continue por quatro ou oito batidas.</li>
+<li>Se perder o ritmo, pare e recomece.</li>
+</ol>
+<p>
+Se não tiver metrônomo, conte em voz alta ou bata levemente o pé,
+desde que isso seja confortável.
+</p>
+
+<h3>5. Exercício de ritmo</h3>
+<div class="caixa-exercicio">
+<h3>Pratique três vezes</h3>
+<div class="checklist" data-checklist>
+<label><input type="checkbox"> Conte de 1 a 4 mantendo um pulso regular.</label>
+<label><input type="checkbox"> Toque 1 · 2 · 3 · 2, uma nota por pulso.</label>
+<label><input type="checkbox"> Repita a sequência sem acelerar.</label>
+<label><input type="checkbox"> Toque a nota 1 e espere dois pulsos antes da nota 2.</label>
+<label><input type="checkbox"> Compare as duas versões e perceba a diferença de ritmo.</label>
+<div class="progresso">0 de 5 atividades concluídas</div>
+</div>
+</div>
+
+<h3>6. Erros comuns</h3>
+<ul>
+<li>Acelerar sem perceber quando a sequência fica mais fácil.</li>
+<li>Confundir a ressonância da lâmina com a duração escrita da nota.</li>
+<li>Tentar acompanhar um andamento rápido antes de conseguir manter um andamento lento.</li>
+<li>Interromper uma nota por ansiedade, mesmo quando o exercício pede que ela ocupe mais tempo.</li>
+</ul>
+
+<h3>7. Desafio da aula</h3>
+<p>
+Toque 1 · 2 · 3 · 2 · 1 mantendo uma contagem regular. Em seguida,
+repita a mesma sequência deixando dois pulsos para cada nota.
+</p>
+<p>As notas serão as mesmas, mas a duração da sequência será diferente.</p>
+
+<div class="proxima-aula">Próxima aula: Aula 8 — Sua primeira melodia.</div>
+</section>
+
+<!-- AULA 8 -->
+
+<section class="aula" id="aula8">
+<h2>Aula 8 — Sua primeira melodia</h2>
+<div class="identificacao">Módulo 1 · Primeiros passos</div>
+
+<h3>1. O que transforma uma sequência em melodia?</h3>
+<p>
+Uma melodia é uma sucessão organizada de notas que forma uma ideia musical
+reconhecível. Ela pode ser curta ou longa, simples ou complexa.
+</p>
+<p>
+Até agora, você praticou notas isoladas, sequências ascendentes e descendentes
+e noções de ritmo. Nesta aula, vamos reunir essas habilidades em uma pequena
+composição didática.
+</p>
+<div class="atencao">
+A sequência a seguir é um exercício original para este curso, criado
+para praticar as notas básicas. Não é necessário conhecer teoria musical
+avançada para tocá-la.
+</div>
+
+<h3>2. Conheça a melodia</h3>
+<div class="sequencia">
+Pequenos Passos
+<small>Exercício original para kalimba em Dó maior</small>
+</div>
+
+<div class="caixa-exercicio">
+<strong>Frase 1</strong>
+<div class="sequencia">1 · 2 · 3 · 2<small>Dó · Ré · Mi · Ré</small></div>
+
+<strong>Frase 2</strong>
+<div class="sequencia">1 · 2 · 3 · 1<small>Dó · Ré · Mi · Dó</small></div>
+</div>
+
+<p>
+Para facilitar o aprendizado, tocaremos cada nota por um pulso,
+mantendo um andamento lento e constante.
+</p>
+
+<h3>3. Aprenda a primeira frase</h3>
+<p>Comece com 1 · 2 · 3 · 2.</p>
+<ul>
+<li>Encontre a nota 1 e toque-a.</li>
+<li>Passe para a nota 2.</li>
+<li>Toque a nota 3.</li>
+<li>Retorne à nota 2.</li>
+</ul>
+<p>
+Repita a frase até conseguir tocar as quatro notas sem precisar interromper
+o exercício para procurar cada número.
+</p>
+<p>Não se preocupe se precisar olhar para as lâminas. A familiaridade visual será construída gradualmente.</p>
+
+<h3>4. Aprenda a segunda frase</h3>
+<p>Agora pratique 1 · 2 · 3 · 1.</p>
+<p>
+Observe que a última nota é diferente da última nota da primeira frase.
+Em vez de voltar à nota 2, você retorna à nota 1.
+</p>
+<p>
+Essa pequena mudança ajuda a perceber como uma melodia pode mudar de
+direção sem precisar usar muitas notas diferentes.
+</p>
+
+<h3>5. Una as frases</h3>
+<div class="sequencia">
+1 · 2 · 3 · 2 | 1 · 2 · 3 · 1
+<small>Melodia completa — Pequenos Passos</small>
+</div>
+<p>
+Toque as duas frases na ordem apresentada. Primeiro, toque cada frase
+separadamente. Depois, una-as e faça uma pequena pausa entre as duas
+para marcar a divisão.
+</p>
+<p>
+Quando conseguir tocar a sequência inteira com tranquilidade,
+experimente reduzir um pouco a pausa. Mantenha o andamento regular.
+</p>
+
+<h3>6. Exercício de interpretação</h3>
+<p>Toque a mesma melodia de três maneiras:</p>
+<ol>
+<li>Lentamente, concentrando-se na precisão.</li>
+<li>Com um pulso regular, usando uma contagem em voz alta.</li>
+<li>De memória, tentando olhar menos para a notação.</li>
+</ol>
+<p>
+A terceira tentativa não precisa sair perfeita. O objetivo é começar
+a construir memória musical.
+</p>
+
+<h3>7. Como saber se aprendeu?</h3>
+<p>Você conseguiu o objetivo desta aula se puder:</p>
+<ul>
+<li>ler a sequência numérica;</li>
+<li>encontrar as lâminas correspondentes;</li>
+<li>manter a ordem das notas;</li>
+<li>tocar as duas frases sem confundi-las.</li>
+</ul>
+
+<div class="proxima-aula">Próxima aula: Aula 9 — Como praticar sem se perder.</div>
+</section>
+
+<!-- AULA 9 -->
+
+<section class="aula" id="aula9">
+<h2>Aula 9 — Como praticar sem se perder</h2>
+<div class="identificacao">Módulo 1 · Primeiros passos</div>
+
+<h3>1. Por que praticar com método?</h3>
+<p>
+Quando começamos a aprender um instrumento, é comum repetir uma sequência
+muitas vezes esperando que ela fique mais fácil. A repetição ajuda,
+mas praticar sem perceber o que está dando errado pode tornar o aprendizado
+mais demorado.
+</p>
+<p>
+Uma boa prática tem três características: um objetivo claro, um ritmo
+adequado e uma maneira de verificar o progresso.
+</p>
+<p>
+Em vez de pensar apenas “vou tocar kalimba por quinze minutos”,
+experimente definir um objetivo específico: “vou aprender a tocar a
+primeira frase de uma melodia sem trocar a ordem das notas”.
+</p>
+<p>Esse objetivo é mais fácil de avaliar.</p>
+
+<h3>2. Divida a dificuldade em partes</h3>
+<p>Imagine que você esteja tentando tocar a sequência:</p>
+
+<div class="sequencia">
+1 · 2 · 3 · 2 · 1 · 2 · 3 · 1
+<small>Oito notas em uma sequência</small>
+</div>
+
+<p>Se você se perder ao tocar tudo de uma vez, divida o exercício:</p>
+<ul>
+<li><strong>Parte A:</strong> 1 · 2 · 3 · 2</li>
+<li><strong>Parte B:</strong> 1 · 2 · 3 · 1</li>
+</ul>
+<p>
+Pratique a parte A. Depois, pratique a parte B. Quando ambas estiverem
+mais familiares, una as duas.
+</p>
+<p>
+Essa técnica é conhecida como prática por partes. Ela pode ser usada
+em melodias curtas e também em músicas mais longas.
+</p>
+
+<h3>3. Como corrigir uma nota errada</h3>
+<p>Quando tocar uma nota diferente da indicada, não precisa recomeçar tudo imediatamente.</p>
+<ol>
+<li>Pare a sequência.</li>
+<li>Confira o número que deveria tocar.</li>
+<li>Localize a lâmina correspondente.</li>
+<li>Toque apenas essa nota.</li>
+<li>Retome o exercício desde o início do pequeno trecho.</li>
+</ol>
+<p>
+Dessa forma, você identifica o ponto que precisa de atenção em vez de
+repetir toda a música sem compreender o erro.
+</p>
+
+<h3>4. Um plano simples de prática</h3>
+<div class="caixa-exercicio">
+<h3>Rotina sugerida — 15 minutos</h3>
+
+<p><strong>3 min — Aquecimento</strong></p>
+<p>Toque notas isoladas, prestando atenção ao conforto das mãos e à clareza do som.</p>
+
+<p><strong>5 min — Exercício principal</strong></p>
+<p>Pratique a sequência ou melodia que está aprendendo, dividindo-a em trechos se necessário.</p>
+
+<p><strong>4 min — Repetição consciente</strong></p>
+<p>Repita o trecho que apresentou mais dificuldade, sem aumentar a velocidade antes de estar confortável.</p>
+
+<p><strong>3 min — Revisão</strong></p>
+<p>Toque novamente o exercício completo e anote o que conseguiu fazer e o que deseja melhorar.</p>
+</div>
+
+<p>
+Esse plano é uma sugestão, não uma obrigação. Você pode praticar por menos
+tempo e fazer pausas sempre que necessário.
+</p>
+
+<h3>5. Como acompanhar seu progresso</h3>
+<p>
+Mantenha um pequeno diário de prática. Não precisa escrever muito.
+Registre a data, o exercício realizado e uma observação sobre o resultado.
+</p>
+
+<div class="tabela-conteudo">
+<table>
+<thead><tr><th>Data</th><th>Exercício</th><th>Observação</th></tr></thead>
+<tbody>
+<tr><td>Dia 1</td><td>Sequência 1 · 2 · 3</td><td>Preciso localizar as lâminas com calma.</td></tr>
+<tr><td>Dia 2</td><td>Sequência 1 · 2 · 3</td><td>Consigo tocar com menos interrupções.</td></tr>
+<tr><td>Dia 3</td><td>Pequenos Passos</td><td>Preciso praticar a transição entre as frases.</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>
+Essas anotações ajudam a perceber avanços que podem passar despercebidos
+durante a prática.
+</p>
+
+<h3>6. Erros comuns ao praticar</h3>
+<ul>
+<li>Aumentar a velocidade antes de conseguir tocar as notas corretamente.</li>
+<li>Repetir uma sequência sem identificar onde está a dificuldade.</li>
+<li>Praticar por muito tempo com as mãos tensas.</li>
+<li>Acreditar que precisa acertar tudo na primeira tentativa.</li>
+<li>Deixar de revisar exercícios anteriores quando aprende algo novo.</li>
+</ul>
+
+<h3>7. Desafio da aula</h3>
+<p>
+Escolha a melodia Pequenos Passos, da Aula 8. Toque-a uma vez e identifique
+o trecho mais difícil. Pratique apenas esse trecho e, por fim, toque a
+melodia completa novamente.
+</p>
+<p>
+Compare as duas tentativas. Mesmo que o progresso seja pequeno,
+você terá praticado de maneira consciente.
+</p>
+
+<div class="proxima-aula">Próxima aula: Aula 10 — Revisão e desafio musical.</div>
+</section>
+
+<!-- AULA 10 -->
+
+<section class="aula" id="aula10">
+<h2>Aula 10 — Revisão e desafio musical</h2>
+<div class="identificacao">Módulo 1 · Primeiros passos</div>
+
+<h3>1. O que aprendemos até aqui?</h3>
+<p>
+Você chegou à última aula do primeiro módulo do Kalimba Harmonia!
+</p>
+<p>
+Nas aulas anteriores, conheceu o instrumento, aprendeu a segurar a kalimba,
+observou a organização das lâminas e começou a ler sequências numéricas.
+</p>
+<p>
+Também praticou a coordenação dos polegares, a organização das notas em
+frases musicais, a manutenção do pulso e a correção de erros.
+</p>
+<p>Agora vamos reunir tudo isso em um desafio.</p>
+
+<h3>2. Revisão da notação numérica</h3>
+<p>Antes de começar, relembre a tabela que adotamos neste curso:</p>
+
+<div class="tabela-conteudo">
+<table>
+<thead><tr><th>Número</th><th>Nota musical</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Dó</td></tr>
+<tr><td>2</td><td>Ré</td></tr>
+<tr><td>3</td><td>Mi</td></tr>
+<tr><td>4</td><td>Fá</td></tr>
+<tr><td>5</td><td>Sol</td></tr>
+<tr><td>6</td><td>Lá</td></tr>
+<tr><td>7</td><td>Si</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>
+Essa tabela representa as notas naturais da escala de Dó maior.
+As diferentes oitavas serão identificadas nas próximas aulas, quando
+estudarmos a extensão e a localização das notas no instrumento.
+</p>
+
+<h3>3. Desafio 1 — Identifique as notas</h3>
+
+<div class="caixa-exercicio">
+<p><strong>1. Qual nota corresponde ao número 1?</strong></p>
+<div class="checklist">
+<label><input type="radio" name="q10a"> Ré</label>
+<label><input type="radio" name="q10a" data-correct="true"> Dó</label>
+<label><input type="radio" name="q10a"> Mi</label>
+</div>
+
+<p><strong>2. Qual nota corresponde ao número 4?</strong></p>
+<div class="checklist">
+<label><input type="radio" name="q10b"> Sol</label>
+<label><input type="radio" name="q10b" data-correct="true"> Fá</label>
+<label><input type="radio" name="q10b"> Si</label>
+</div>
+
+<p><strong>3. Qual nota corresponde ao número 7?</strong></p>
+<div class="checklist">
+<label><input type="radio" name="q10c" data-correct="true"> Si</label>
+<label><input type="radio" name="q10c"> Lá</label>
+<label><input type="radio" name="q10c"> Dó</label>
+</div>
+</div>
+
+<h3>4. Desafio 2 — Toque uma sequência</h3>
+<p>Agora pratique esta sequência:</p>
+
+<div class="sequencia">
+1 · 2 · 3 · 4 · 3 · 2 · 1
+<small>Dó · Ré · Mi · Fá · Mi · Ré · Dó</small>
+</div>
+
+<p>Siga estas etapas:</p>
+<ol>
+<li>Leia os números antes de tocar.</li>
+<li>Localize cada lâmina.</li>
+<li>Toque lentamente, uma nota por pulso.</li>
+<li>Faça uma pausa curta ao terminar.</li>
+<li>Repita a sequência tentando manter o mesmo andamento.</li>
+</ol>
+<p>Não se preocupe em tocar depressa. O desafio é manter a ordem e a regularidade.</p>
+
+<h3>5. Desafio 3 — Toque a melodia completa</h3>
+<p>Vamos retomar a melodia original da Aula 8.</p>
+
+<div class="sequencia">
+Pequenos Passos
+<small>Revisão final do módulo</small>
+</div>
+
+<div class="caixa-exercicio">
+<strong>Frase 1</strong>
+<div class="sequencia">1 · 2 · 3 · 2</div>
+
+<strong>Frase 2</strong>
+<div class="sequencia">1 · 2 · 3 · 1</div>
+</div>
+
+<p>
+Pratique cada frase separadamente e depois toque as duas em sequência.
+Ao terminar, tente tocar a melodia uma última vez sem consultar os números.
+Se precisar olhar novamente, tudo bem: o importante é reconhecer a sequência
+e saber como executá-la.
+</p>
+
+<h3>6. Checklist de conclusão</h3>
+<div class="checklist" data-checklist>
+<label><input type="checkbox"> Consigo segurar a kalimba de forma confortável.</label>
+<label><input type="checkbox"> Sei que cada lâmina produz uma nota.</label>
+<label><input type="checkbox"> Reconheço a correspondência entre os números 1 a 7 e as notas naturais.</label>
+<label><input type="checkbox"> Consigo ler sequências numéricas simples.</label>
+<label><input type="checkbox"> Consigo tocar uma sequência lentamente e manter a ordem.</label>
+<label><input type="checkbox"> Sei dividir uma melodia em pequenos trechos para praticar.</label>
+<label><input type="checkbox"> Consigo identificar um erro e tentar corrigi-lo.</label>
+<div class="progresso">0 de 7 habilidades revisadas</div>
+</div>
+
+<h3>7. Encerramento do primeiro módulo</h3>
+<p>
+Parabéns por concluir as dez primeiras aulas do Kalimba Harmonia!
+</p>
+<p>
+Você começou conhecendo o instrumento e agora já tem uma base para
+interpretar números, praticar sequências e tocar uma pequena melodia.
+Essas habilidades serão importantes para entender as próximas etapas.
+</p>
+<p>
+Na segunda etapa, avançaremos para a identificação das notas em diferentes
+oitavas, a organização das escalas, os intervalos e os padrões rítmicos.
+</p>
+<p>
+O objetivo não é apenas decorar números, mas compreender como eles
+se transformam em música.
+</p>
+
+<div class="proxima-aula">
+Módulo 1 concluído! Em breve: Módulo 2 — Ampliando seus conhecimentos musicais.
+</div>
+</section>
 
 </main>
 
 <footer>
-  <p><strong>Kalimba Harmonia</strong></p>
-  <p>Sua música começa aqui.</p>
-  <p>
-    <a href="index.html">Início</a> |
-    <a href="sobre.html">Sobre</a> |
-    <a href="privacidade.html">Privacidade</a>
-  </p>
-  <p>© 2026 Kalimba Harmonia</p>
+  <p>♫ Kalimba Harmonia</p>
+  <p>Aprenda, pratique e descubra sua música.</p>
+  <p><a href="index.html">Voltar à página inicial</a></p>
 </footer>
+
+<script>
+// Atualiza automaticamente o progresso dos exercícios.
+document.querySelectorAll("[data-checklist]").forEach(checklist => {
+  const boxes = checklist.querySelectorAll('input[type="checkbox"]');
+  const progress = checklist.querySelector(".progresso");
+
+  function updateProgress() {
+    const completed = [...boxes].filter(box => box.checked).length;
+    progress.textContent = `${completed} de ${boxes.length} atividades concluídas`;
+  }
+
+  boxes.forEach(box => box.addEventListener("change", updateProgress));
+});
+
+// Verifica respostas dos exercícios de múltipla escolha.
+document.querySelectorAll('.checklist input[type="radio"]').forEach(input => {
+  input.addEventListener("change", () => {
+    const group = input.closest(".checklist");
+    const oldMessage = group.querySelector(".feedback");
+    if (oldMessage) oldMessage.remove();
+
+    const message = document.createElement("p");
+    message.className = "feedback";
+    message.style.fontWeight = "bold";
+    message.style.marginTop = "12px";
+
+    if (input.dataset.correct === "true") {
+      message.textContent = "Resposta correta! Muito bem!";
+      message.style.color = "#456b4a";
+    } else {
+      message.textContent = "Ainda não. Consulte a explicação e tente novamente.";
+      message.style.color = "#9a633e";
+    }
+
+    group.appendChild(message);
+  });
+});
+</script>
 
 </body>
 </html>
-```
