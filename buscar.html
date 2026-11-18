@@ -1,11 +1,13 @@
-```html
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Pesquise aulas, cifras, músicas e conteúdos sobre kalimba no Kalimba Harmonia.">
+
 <title>Buscar | Kalimba Harmonia</title>
+
 <style>
 :root {
   --creme: #f5f0e3;
@@ -14,7 +16,11 @@
   --escuro: #344638;
   --branco: #fffdf8;
 }
-* { box-sizing: border-box; }
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Georgia, serif;
@@ -22,18 +28,29 @@ body {
   color: var(--escuro);
   line-height: 1.8;
 }
+
+/* CABEÇALHO */
+
 header {
   background: var(--escuro);
   color: white;
   padding: 25px 7%;
 }
-header h1 { margin: 0; }
+
+header h1 {
+  margin: 0;
+}
+
+/* MENU PRINCIPAL */
+
 nav {
   background: var(--verde);
   padding: 13px;
   text-align: center;
 }
+
 nav a {
+  display: inline-block;
   color: white;
   text-decoration: none;
   margin: 0 12px;
@@ -43,24 +60,41 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
+/* CONTEÚDO PRINCIPAL */
+
+main {
+  max-width: 1100px;
+  margin: 35px auto;
+  padding: 0 20px;
+}
+
 .hero {
   background: var(--madeira);
   padding: 30px;
   border-radius: 12px;
   margin-bottom: 25px;
 }
+
 section {
   background: var(--branco);
   padding: 25px;
   border-radius: 10px;
   margin-bottom: 20px;
 }
-h2 { color: var(--verde); }
+
+h2 {
+  color: var(--verde);
+}
+
+/* FORMULÁRIO DE PESQUISA */
+
 .search-form {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
+
 input {
   flex: 1;
   min-width: 180px;
@@ -69,6 +103,12 @@ input {
   border-radius: 7px;
   font: inherit;
 }
+
+input:focus {
+  outline: 2px solid var(--verde);
+  outline-offset: 2px;
+}
+
 button {
   padding: 13px 22px;
   border: none;
@@ -78,18 +118,60 @@ button {
   font: inherit;
   cursor: pointer;
 }
-button:hover { background: var(--escuro); }
+
+button:hover {
+  background: var(--escuro);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--escuro);
+  outline-offset: 3px;
+}
+
+/* RESULTADOS */
+
 .resultado {
   border-bottom: 1px solid #e5dece;
   padding: 15px 0;
 }
-.resultado:last-child { border-bottom: none; }
-.resultado h3 { margin: 0 0 5px; color: var(--verde); }
+
+.resultado:last-child {
+  border-bottom: none;
+}
+
+.resultado h3 {
+  margin: 0 0 5px;
+  color: var(--verde);
+}
+
 .resultado a {
   color: var(--verde);
   font-weight: bold;
 }
-#mensagem { margin-top: 15px; }
+
+.resultado a:hover {
+  color: var(--escuro);
+}
+
+#mensagem {
+  margin-top: 15px;
+}
+
+/* RODAPÉ */
+
+footer {
+  background: var(--escuro);
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 8px 0;
+}
+
 footer a {
   color: white;
   text-decoration: none;
@@ -100,42 +182,110 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+/* AJUSTES PARA CELULAR */
+
+@media (max-width: 600px) {
+  header {
+    padding: 22px 5%;
+    text-align: center;
+  }
+
+  nav {
+    padding: 10px 5px;
+  }
+
+  nav a {
+    margin: 5px 8px;
+  }
+
+  main {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .hero,
+  section {
+    padding: 20px;
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  input,
+  button {
+    width: 100%;
+  }
+
+  footer a {
+    display: inline-block;
+    margin: 5px 8px;
+  }
+}
 </style>
 </head>
+
 <body>
+
+<!-- CABEÇALHO -->
 
 <header>
   <h1>Kalimba Harmonia</h1>
-  <nav aria-label="Menu principal">
-    <a href="index.html">Início</a>
-    <a href="curso.html">Curso</a>
-    <a href="biblioteca.html">Cifras</a>
-    <a href="hinarios.html">Hinários</a>
-    <a href="sobre.html">Sobre</a>
-  </nav>
 </header>
 
+<!-- MENU PRINCIPAL PADRONIZADO -->
+
+<nav aria-label="Navegação principal">
+  <a href="index.html">Início</a>
+  <a href="curso.html">Curso</a>
+  <a href="biblioteca.html">Cifras</a>
+  <a href="hinarios.html">Hinários</a>
+  <a href="sobre.html">Sobre</a>
+</nav>
+
+<!-- CONTEÚDO -->
+
 <main>
+
   <section class="hero">
     <h2>Buscar no Kalimba Harmonia</h2>
-    <p>Encontre aulas, cifras, repertórios e conteúdos para sua jornada musical.</p>
+
+    <p>
+      Encontre aulas, cifras, repertórios e conteúdos
+      para sua jornada musical.
+    </p>
+
     <form class="search-form" id="formBusca">
-      <input type="search" id="campoBusca" name="q"
+      <input
+        type="search"
+        id="campoBusca"
+        name="q"
         placeholder="O que você deseja encontrar?"
-        aria-label="Digite o assunto que deseja pesquisar">
+        aria-label="Digite o assunto que deseja pesquisar"
+      >
+
       <button type="submit">Pesquisar</button>
     </form>
   </section>
 
   <section>
     <h2>Resultados da pesquisa</h2>
+
     <div id="resultados" aria-live="polite"></div>
-    <p id="mensagem">Digite uma palavra ou assunto para começar.</p>
+
+    <p id="mensagem">
+      Digite uma palavra ou assunto para começar.
+    </p>
   </section>
+
 </main>
+
+<!-- RODAPÉ -->
 
 <footer>
   <p>Kalimba Harmonia — Música, conhecimento e harmonia.</p>
+
   <p>
     <a href="index.html">Início</a>
     <a href="sobre.html">Sobre o projeto</a>
@@ -143,88 +293,98 @@ footer a:hover {
   </p>
 </footer>
 
+<!-- SISTEMA DE PESQUISA -->
+
 <script>
+
 const paginas = [
+
   {
     titulo: "Curso de Kalimba",
     url: "curso.html",
     descricao: "Aulas passo a passo, notas, ritmos, escalas e exercícios.",
     palavras: "curso aulas iniciante aprender kalimba notas números ritmo escalas acordes afinação prática"
   },
+
   {
     titulo: "Biblioteca de Cifras",
     url: "biblioteca.html",
     descricao: "Cifras, melodias e exercícios para praticar na kalimba.",
-    palavras: "biblioteca cifras músicas melodias exercícios partituras números prática"
+    palavras: "biblioteca cifras músicas melodias exercícios partituras números prática repertório canções"
   },
-  {
-    titulo: "Música Cristã",
-    url: "gospel.html",
-    descricao: "Conteúdos sobre louvores, adoração e música cristã.",
-    palavras: "gospel cristã louvor adoração salmos cânticos hinos música religiosa"
-  },
+
   {
     titulo: "Hinários",
     url: "hinarios.html",
     descricao: "Harpa Cristã, hinários e história dos hinos.",
-    palavras: "hinários harpa cristã hinos evangélicos cânticos história hinologia"
+    palavras: "hinários harpa cristã hinos evangélicos cânticos história hinologia música cristã louvores"
   },
-  {
-    titulo: "Músicas do Mundo",
-    url: "mundo.html",
-    descricao: "Conheça músicas e tradições de diferentes regiões do mundo.",
-    palavras: "mundo culturas africa ásia europa oceania américa latina música tradicional"
-  },
-  {
-    titulo: "Composição Musical",
-    url: "composicao.html",
-    descricao: "Aprenda sobre melodias, escalas, ritmos, acordes e arranjos.",
-    palavras: "composição criar compor melodia escalas ritmo acordes arranjos criatividade"
-  },
+
   {
     titulo: "Sobre o Projeto",
     url: "sobre.html",
     descricao: "Conheça a proposta e o compromisso editorial do Kalimba Harmonia.",
-    palavras: "sobre projeto proposta compromisso editorial kalimba"
+    palavras: "sobre projeto proposta compromisso editorial kalimba objetivo informações"
   },
+
   {
     titulo: "Política de Privacidade",
     url: "privacidade.html",
     descricao: "Consulte as informações sobre privacidade do site.",
-    palavras: "privacidade dados pessoais cookies lgpd contato"
+    palavras: "privacidade dados pessoais cookies lgpd contato segurança"
   }
+
 ];
 
+/* NORMALIZAÇÃO DE TEXTO */
+
 function normalizar(texto) {
-  return texto.toLocaleLowerCase("pt-BR")
+  return texto
+    .toLocaleLowerCase("pt-BR")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .trim();
 }
 
+/* FUNÇÃO DE PESQUISA */
+
 function pesquisar(termo) {
+
   const consulta = normalizar(termo);
+
   const area = document.getElementById("resultados");
   const mensagem = document.getElementById("mensagem");
 
   area.innerHTML = "";
 
   if (!consulta) {
-    mensagem.textContent = "Digite uma palavra ou assunto para começar.";
+    mensagem.textContent =
+      "Digite uma palavra ou assunto para começar.";
+
     return;
   }
 
   const palavrasConsulta = consulta.split(/\s+/);
 
   const encontrados = paginas.filter(pagina => {
+
     const conteudo = normalizar(
-      pagina.titulo + " " + pagina.descricao + " " + pagina.palavras
+      pagina.titulo + " " +
+      pagina.descricao + " " +
+      pagina.palavras
     );
-    return palavrasConsulta.every(palavra => conteudo.includes(palavra));
+
+    return palavrasConsulta.every(palavra =>
+      conteudo.includes(palavra)
+    );
+
   });
 
   if (encontrados.length === 0) {
-    mensagem.textContent = "Nenhum resultado encontrado. Tente outra palavra.";
+
+    mensagem.textContent =
+      "Nenhum resultado encontrado. Tente outra palavra.";
+
     return;
   }
 
@@ -232,6 +392,7 @@ function pesquisar(termo) {
     encontrados.length + " resultado(s) encontrado(s):";
 
   encontrados.forEach(pagina => {
+
     const item = document.createElement("article");
     item.className = "resultado";
 
@@ -246,27 +407,54 @@ function pesquisar(termo) {
     link.textContent = "Acessar página";
 
     item.append(titulo, descricao, link);
+
     area.appendChild(item);
+
   });
+
 }
 
+/* CARREGAR PESQUISA PELA URL */
+
 const campo = document.getElementById("campoBusca");
-const parametros = new URLSearchParams(window.location.search);
+
+const parametros = new URLSearchParams(
+  window.location.search
+);
+
 const buscaInicial = parametros.get("q") || "";
 
 campo.value = buscaInicial;
-if (buscaInicial) pesquisar(buscaInicial);
 
-document.getElementById("formBusca").addEventListener("submit", function(event) {
-  event.preventDefault();
-  const termo = campo.value.trim();
-  const url = new URL(window.location.href);
-  url.searchParams.set("q", termo);
-  window.history.replaceState({}, "", url);
-  pesquisar(termo);
-});
+if (buscaInicial) {
+  pesquisar(buscaInicial);
+}
+
+/* ENVIAR PESQUISA */
+
+document
+  .getElementById("formBusca")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const termo = campo.value.trim();
+
+    const url = new URL(window.location.href);
+
+    if (termo) {
+      url.searchParams.set("q", termo);
+    } else {
+      url.searchParams.delete("q");
+    }
+
+    window.history.replaceState({}, "", url);
+
+    pesquisar(termo);
+
+  });
+
 </script>
 
 </body>
 </html>
-```
