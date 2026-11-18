@@ -1,202 +1,485 @@
-```html
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aprenda kalimba, descubra melodias e desenvolva sua própria música no Kalimba Harmonia.">
-  <title>Kalimba Harmonia — Sua música começa aqui</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root {
-      --cream: #f5f0e3;
-      --wood: #d6b98c;
-      --green: #456b4a;
-      --dark: #344638;
-      --white: #fffdf8;
-    }
+<meta name="description" content="Aprenda kalimba, descubra melodias e desenvolva sua própria música no Kalimba Harmonia.">
 
-    * { box-sizing: border-box; }
+<title>Kalimba Harmonia — Sua música começa aqui</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--cream);
-      color: var(--dark);
-      line-height: 1.6;
-    }
+<style>
 
-    header {
-      background: var(--white);
-      padding: 18px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      border-bottom: 1px solid var(--wood);
-    }
+/* CORES DO SITE */
 
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 25px;
-      font-weight: bold;
-      color: var(--green);
-    }
+:root {
+  --cream: #f5f0e3;
+  --wood: #d6b98c;
+  --green: #456b4a;
+  --dark: #344638;
+  --white: #fffdf8;
+}
 
-    nav {
-      background: var(--verde);
-      padding: 13px;
-      text-align: center;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: bold;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.6;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+/* CABEÇALHO */
 
-    .hero {
-      padding: 85px 7%;
-      text-align: center;
-      background: linear-gradient(135deg, #e8ddc7, #f5f0e3);
-    }
+header {
+  background: var(--dark);
+  padding: 22px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
 
-    .hero h1 {
-      font: bold clamp(36px, 6vw, 58px) Georgia, serif;
-      margin: 0 0 18px;
-    }
+.logo {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
 
-    .hero p {
-      max-width: 650px;
-      margin: 0 auto 28px;
-      font-size: 18px;
-    }
+/* MENU PRINCIPAL */
 
-    .search {
-      display: flex;
-      max-width: 540px;
-      margin: auto;
-      gap: 8px;
-    }
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
-    .search input {
-      flex: 1;
-      min-width: 0;
-      padding: 15px;
-      border: 1px solid var(--wood);
-      border-radius: 8px;
-      font-size: 15px;
-    }
+nav a {
+  color: white !important;
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 7px 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
 
-    button, .button {
-      background: var(--green);
-      color: white;
-      border: 0;
-      border-radius: 8px;
-      padding: 14px 20px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav a:visited {
+  color: white !important;
+}
 
-    button:hover, .button:hover {
-      background: var(--dark);
-    }
+nav a:hover {
+  color: var(--wood) !important;
+  text-decoration: underline;
+}
 
-    main { padding: 55px 7%; }
+/* DESTAQUE PRINCIPAL */
 
-    .section-title {
-      text-align: center;
-      font: bold 32px Georgia, serif;
-      margin-bottom: 30px;
-    }
+.hero {
+  padding: 85px 7%;
+  text-align: center;
+  background: linear-gradient(135deg, #e8ddc7, #f5f0e3);
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 20px;
-    }
+.hero h1 {
+  font: bold clamp(36px, 6vw, 58px) Georgia, serif;
+  margin: 0 0 18px;
+  color: var(--dark);
+}
 
-    .card {
-      background: var(--white);
-      padding: 25px;
-      border-radius: 12px;
-      border: 1px solid #e5d8c2;
-    }
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 28px;
+  font-size: 18px;
+}
 
-    .card .symbol { font-size: 30px; }
+/* BUSCA */
 
-    .card h3 { color: var(--green); }
+.search {
+  display: flex;
+  max-width: 540px;
+  margin: auto;
+  gap: 8px;
+}
 
-    .card a {
-      color: var(--green);
-      font-weight: bold;
-      text-decoration: none;
-    }
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid var(--wood);
+  border-radius: 8px;
+  font-size: 15px;
+}
 
-    .card a:hover { text-decoration: underline; }
+.search input:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
 
-    .welcome {
-      margin-top: 55px;
-      background: #e5eadf;
-      padding: 35px;
-      border-radius: 14px;
-      text-align: center;
-    }
+/* BOTÕES */
 
-    footer {
-      background: var(--dark);
-      color: white;
-      padding: 30px 7%;
-      text-align: center;
-    }
+button,
+.button {
+  background: var(--green);
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 14px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
 
-    footer a {
-      color: #e9d5ad;
-      margin: 0 8px;
-    }
+button:hover,
+.button:hover {
+  background: var(--dark);
+}
 
-    @media (max-width: 600px) {
-      header { justify-content: center; }
-      nav { justify-content: center; }
-      .search { flex-direction: column; }
-      .hero { padding: 60px 6%; }
-    }
-  </style>
+/* CONTEÚDO */
+
+main {
+  padding: 55px 7%;
+}
+
+.section-title {
+  text-align: center;
+  font: bold 32px Georgia, serif;
+  margin-bottom: 30px;
+  color: var(--dark);
+}
+
+/* CARTÕES */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e5d8c2;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card .symbol {
+  font-size: 30px;
+}
+
+.card h3 {
+  color: var(--green);
+}
+
+.card p {
+  margin-bottom: 18px;
+}
+
+.card a {
+  color: var(--green);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* APRESENTAÇÃO */
+
+.welcome {
+  margin-top: 55px;
+  background: #e5eadf;
+  padding: 35px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.welcome h2 {
+  font-family: Georgia, serif;
+  color: var(--dark);
+}
+
+/* RODAPÉ */
+
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 30px 7%;
+  text-align: center;
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+footer a {
+  color: #e9d5ad;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ACESSIBILIDADE */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--wood);
+  outline-offset: 3px;
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+  header {
+    justify-content: center;
+    text-align: center;
+    padding: 20px 5%;
+  }
+
+  .logo {
+    font-size: 23px;
+    width: 100%;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    gap: 3px;
+  }
+
+  nav a {
+    margin: 4px 5px;
+    font-size: 14px;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  .search input,
+  .search button {
+    width: 100%;
+  }
+
+  .hero {
+    padding: 60px 6%;
+  }
+
+  main {
+    padding: 35px 5%;
+  }
+
+  .welcome {
+    padding: 25px 18px;
+  }
+
+  footer {
+    padding: 25px 5%;
+  }
+
+  footer a {
+    display: inline-block;
+    margin: 5px;
+  }
+}
+
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="logo">♫ Kalimba Harmonia</div>
 
-    <nav aria-label="Menu principal">
-      <a href="index.html">Início</a>
-      <a href="curso.html">Curso</a>
-      <a href="biblioteca.html">Cifras</a>
-      <a href="hinarios.html">Hinários</a>
-      <a href="sobre.html">Sobre</a>
-    </nav>
-  </header>
+<!-- CABEÇALHO E MENU -->
 
-  <section class="hero">
-    <h1>Sua música começa aqui.</h1>
+<header>
+
+  <div class="logo">♫ Kalimba Harmonia</div>
+
+  <nav aria-label="Navegação principal">
+    <a href="index.html">Início</a>
+    <a href="curso.html">Curso</a>
+    <a href="biblioteca.html">Cifras</a>
+    <a href="hinarios.html">Hinários</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
+
+</header>
+
+<!-- DESTAQUE PRINCIPAL -->
+
+<section class="hero">
+
+  <h1>Sua música começa aqui.</h1>
+
+  <p>
+    Aprenda a tocar kalimba, descubra melodias de diferentes
+    culturas e desenvolva sua própria música, uma nota de cada vez.
+  </p>
+
+  <form class="search" action="buscar.html" method="get">
+
+    <input
+      type="search"
+      name="q"
+      placeholder="O que você quer aprender?"
+      aria-label="Pesquisar conteúdo"
+    >
+
+    <button type="submit">Pesquisar</button>
+
+  </form>
+
+</section>
+
+<!-- CONTEÚDO PRINCIPAL -->
+
+<main>
+
+  <h2 class="section-title">Explore o Kalimba Harmonia</h2>
+
+  <div class="cards">
+
+    <!-- CURSO -->
+
+    <article class="card">
+
+      <div class="symbol">🎓</div>
+
+      <h3>Curso de Kalimba</h3>
+
+      <p>
+        Aprenda desde os primeiros passos até técnicas mais avançadas,
+        com aulas organizadas e exercícios práticos.
+      </p>
+
+      <a href="curso.html">Conhecer o curso →</a>
+
+    </article>
+
+    <!-- CIFRAS -->
+
+    <article class="card">
+
+      <div class="symbol">🎵</div>
+
+      <h3>Biblioteca de Cifras</h3>
+
+      <p>
+        Descubra melodias, consulte cifras e encontre sequências
+        numéricas para tocar na sua kalimba.
+      </p>
+
+      <a href="biblioteca.html">Explorar cifras →</a>
+
+    </article>
+
+    <!-- HINÁRIOS -->
+
+    <article class="card">
+
+      <div class="symbol">🎼</div>
+
+      <h3>Hinários</h3>
+
+      <p>
+        Explore hinários, conheça a história dos hinos
+        e descubra repertórios para sua prática musical.
+      </p>
+
+      <a href="hinarios.html">Conhecer hinários →</a>
+
+    </article>
+
+    <!-- SOBRE -->
+
+    <article class="card">
+
+      <div class="symbol">🌿</div>
+
+      <h3>Sobre o Projeto</h3>
+
+      <p>
+        Conheça a proposta do Kalimba Harmonia e nosso compromisso
+        com o aprendizado e a divulgação musical.
+      </p>
+
+      <a href="sobre.html">Conhecer o projeto →</a>
+
+    </article>
+
+  </div>
+
+  <!-- BOAS-VINDAS -->
+
+  <section class="welcome">
+
+    <h2>Uma jornada musical ao seu alcance</h2>
 
     <p>
-      Aprenda a tocar kalimba, descubra melodias de diferentes
-      culturas e desenvolva sua própria música, uma nota de cada vez.
+      A kalimba é um instrumento que permite descobrir a música
+      de maneira simples, criativa e prazerosa.
     </p>
 
-    <form class="search" action="buscar.html" method="get">
-      <input
-        type="search"
-        name="q"
-        placeholder="O que você quer aprender?"
-        aria-label="Pesquisar conteúdo"
-      >
-      <button type="
+    <p>
+      Aqui você encontra conhecimento, repertório e orientação
+      para desenvolver suas habilidades, respeitando seu próprio ritmo.
+    </p>
+
+    <a class="button" href="curso.html">
+      Começar a aprender
+    </a>
+
+  </section>
+
+</main>
+
+<!-- RODAPÉ -->
+
+<footer>
+
+  <p>
+    <strong>Kalimba Harmonia</strong>
+  </p>
+
+  <p>
+    Aprenda, pratique e descubra sua música.
+  </p>
+
+  <p>
+    <a href="index.html">Início</a>
+    <a href="curso.html">Curso</a>
+    <a href="biblioteca.html">Cifras</a>
+    <a href="hinarios.html">Hinários</a>
+    <a href="sobre.html">Sobre</a>
+  </p>
+
+  <p>
+    <a href="privacidade.html">Política de Privacidade</a>
+  </p>
+
+  <p>
+    © Kalimba Harmonia — Todos os direitos reservados.
+  </p>
+
+</footer>
+
+</body>
+</html>
