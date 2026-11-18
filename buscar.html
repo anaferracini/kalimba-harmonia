@@ -21,8 +21,12 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: Georgia, serif;
   background: var(--creme);
   color: var(--escuro);
@@ -32,40 +36,64 @@ body {
 /* CABEÇALHO */
 
 header {
-  background: var(--escuro);
-  color: white;
+  display: block;
+  width: 100%;
+  background: #344638;
+  color: #ffffff;
   padding: 25px 7%;
 }
 
 header h1 {
   margin: 0;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 30px;
 }
 
 /* MENU PRINCIPAL */
 
-nav {
-  background: #fffdf8;
-  padding: 13px;
-  text-align: center;
-  border-bottom: 1px solid #e5dece;
+body > nav[aria-label="Navegação principal"] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 54px !important;
+  padding: 12px 10px !important;
+  margin: 0 !important;
+  background: #fffdf8 !important;
+  border-bottom: 1px solid #d6b98c !important;
+  text-align: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-nav a {
-  display: inline-block;
-  color: #344638;
-  text-decoration: none;
-  margin: 0 12px;
-  font-weight: bold;
+body > nav[aria-label="Navegação principal"] a,
+body > nav[aria-label="Navegação principal"] a:link,
+body > nav[aria-label="Navegação principal"] a:visited {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #344638 !important;
+  background: transparent !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  line-height: 1.5 !important;
+  text-decoration: none !important;
+  padding: 6px 12px !important;
+  margin: 3px 5px !important;
 }
 
-nav a:hover {
-  color: #456b4a;
-  text-decoration: underline;
+body > nav[aria-label="Navegação principal"] a:hover {
+  color: #456b4a !important;
+  text-decoration: underline !important;
 }
 
 /* CONTEÚDO PRINCIPAL */
 
 main {
+  display: block;
   max-width: 1100px;
   margin: 35px auto;
   padding: 0 20px;
@@ -97,31 +125,33 @@ h2 {
   flex-wrap: wrap;
 }
 
-input {
+.search-form input {
   flex: 1;
   min-width: 180px;
   padding: 13px;
   border: 1px solid #b7aa91;
   border-radius: 7px;
   font: inherit;
+  color: var(--escuro);
+  background: #ffffff;
 }
 
-input:focus {
+.search-form input:focus {
   outline: 2px solid var(--verde);
   outline-offset: 2px;
 }
 
-button {
+.search-form button {
   padding: 13px 22px;
   border: none;
   border-radius: 7px;
   background: var(--verde);
-  color: white;
+  color: #ffffff;
   font: inherit;
   cursor: pointer;
 }
 
-button:hover {
+.search-form button:hover {
   background: var(--escuro);
 }
 
@@ -163,8 +193,10 @@ a:focus-visible {
 /* RODAPÉ */
 
 footer {
+  display: block;
+  width: 100%;
   background: var(--escuro);
-  color: white;
+  color: #ffffff;
   text-align: center;
   padding: 25px 15px;
   margin-top: 40px;
@@ -175,7 +207,7 @@ footer p {
 }
 
 footer a {
-  color: white;
+  color: #ffffff !important;
   text-decoration: none;
   margin: 0 8px;
   font-weight: bold;
@@ -185,20 +217,36 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* ACESSIBILIDADE */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--verde);
+  outline-offset: 3px;
+}
+
 /* AJUSTES PARA CELULAR */
 
 @media (max-width: 600px) {
+
   header {
     padding: 22px 5%;
     text-align: center;
   }
 
-  nav {
-    padding: 10px 5px;
+  header h1 {
+    font-size: 25px;
   }
 
-  nav a {
-    margin: 5px 8px;
+  body > nav[aria-label="Navegação principal"] {
+    padding: 10px 5px !important;
+  }
+
+  body > nav[aria-label="Navegação principal"] a {
+    margin: 4px 3px !important;
+    padding: 6px 8px !important;
+    font-size: 15px !important;
   }
 
   main {
@@ -215,8 +263,8 @@ footer a:hover {
     flex-direction: column;
   }
 
-  input,
-  button {
+  .search-form input,
+  .search-form button {
     width: 100%;
   }
 
@@ -236,7 +284,7 @@ footer a:hover {
   <h1>Kalimba Harmonia</h1>
 </header>
 
-<!-- MENU PRINCIPAL PADRONIZADO -->
+<!-- MENU PRINCIPAL -->
 
 <nav aria-label="Navegação principal">
   <a href="index.html">Início</a>
@@ -362,7 +410,6 @@ function pesquisar(termo) {
   if (!consulta) {
     mensagem.textContent =
       "Digite uma palavra ou assunto para começar.";
-
     return;
   }
 
